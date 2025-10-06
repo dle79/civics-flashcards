@@ -12,38 +12,70 @@
     padding: 30px;
   }
 
-  h2 { margin-top: 20px; font-size: 26px; }          /* Larger title */
-  p { font-size: 20px; line-height: 1.5; }           /* Larger card text */
+  h2 {
+    margin-top: 20px;
+    font-size: 26px;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 1.5;
+  }
 
   .flashcard {
-    width: 380px; height: 240px; margin: 40px auto;
+    width: 380px;
+    height: 240px;
+    margin: 40px auto;
     perspective: 1000px;
   }
 
   .card {
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
   }
 
-  .card.flip { transform: rotateY(180deg); }
+  .card.flip {
+    transform: rotateY(180deg);
+  }
 
-  .front, .back {
+  /* Front (English) side */
+  .front {
     position: absolute;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     backface-visibility: hidden;
-    display: flex; align-items: center; justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid #333;
     border-radius: 12px;
     background: #fff;
     padding: 20px;
-    font-size: 20px;                   /* ⬅️ main font size for cards */
+    font-size: 20px;           /* Normal size for English text */
     font-weight: bold;
   }
 
-  .back { transform: rotateY(180deg); background: #e0f7fa; }
+  /* Back (Vietnamese) side — larger text */
+  .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: #e0f7fa;
+    padding: 20px;
+    font-size: 23px;           /* 🔹 Larger Vietnamese text */
+    font-weight: bold;
+    transform: rotateY(180deg);
+  }
 
   button {
     margin: 10px;
@@ -53,11 +85,14 @@
     color: #fff;
     border-radius: 8px;
     cursor: pointer;
-    font-size: 18px;                   /* ⬅️ bigger button text */
+    font-size: 18px;
   }
 
-  button:hover { background: #005fa3; }
+  button:hover {
+    background: #005fa3;
+  }
 </style>
+
 
 </head>
 <body>
