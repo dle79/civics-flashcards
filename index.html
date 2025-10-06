@@ -49,32 +49,45 @@
     height: 100%;
     backface-visibility: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 2px solid #333;
     border-radius: 12px;
     background: #fff;
     padding: 20px;
-    font-size: 20px;           /* Normal size for English text */
+    font-size: 20px;
     font-weight: bold;
   }
 
-  /* Back (Vietnamese) side — larger text */
+  /* Back (Vietnamese) side */
   .back {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     border: 2px solid #333;
     border-radius: 12px;
     background: #e0f7fa;
     padding: 20px;
-    font-size: 23px;           /* 🔹 Larger Vietnamese text */
+    font-size: 23px; /* larger Vietnamese text */
     font-weight: bold;
     transform: rotateY(180deg);
+  }
+
+  /* Question number style */
+  .question-number {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
   }
 
   button {
@@ -92,100 +105,72 @@
     background: #005fa3;
   }
 </style>
-
-
 </head>
 <body>
 
-<h2>100 câu hỏi lịch sử Mỹ</h2>
-<p>Nhấn vào thẻ để xem câu trả lời</p>
+<h2>🇺🇸 U.S. Civics Flashcards 🇻🇳</h2>
+<p>Click the card to flip between English and Vietnamese</p>
 
 <div id="flashcard" class="flashcard">
   <div class="card" onclick="this.classList.toggle('flip')">
-    <div class="front"><p id="question"></p></div>
-    <div class="back"><p id="answer"></p></div>
+    <div class="front">
+      <div class="question-number" id="qnum-front"></div>
+      <p id="question"></p>
+    </div>
+    <div class="back">
+      <div class="question-number" id="qnum-back"></div>
+      <p id="answer"></p>
+    </div>
   </div>
 </div>
 
-<button onclick="prevCard()">⬅️ Trở lại câu hỏi trước</button>
-<button onclick="nextCard()">Đi tiếp ➡️</button>
+<button onclick="prevCard()">⬅️ Previous</button>
+<button onclick="nextCard()">Next ➡️</button>
 
 <p id="counter"></p>
 
 <script>
 const cards = [
-  { q: "Câu 1:<br/>Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
-  { q: "Câu 2: Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
-  { q: "Câu 3: Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
-  { q: "Câu 4: Tu chính án là gì?", a: "một sự thay đổi (trong Hiến Pháp)" },
-  { q: "Câu 5: Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" },
-  { q: "Câu 6: Kể ra Một quyền hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?", a: "Tự do ngôn luận" },
-  { q: "Câu 7: Hiến Pháp có bao nhiêu tu chính án?", a: "hai mươi bảy (27)" },
-  { q: "Câu 8: Bản Tuyên Ngôn Độc Lập có ý nghĩa gì?", a: "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" },
-  { q: "Câu 9: Kể ra Hai quyền trong bản Bản Tuyên Ngôn Độc Lập?", a: "quyền sống và quyền tự do" },
-  { q: "Câu 10: Tự do tôn giáo là gì?", a: "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào" },
-  { q: "Câu 11: Hệ thống kinh tế của Hoa Kỳ gọi là gì?*", a: "kinh tế tư bản" },
-  { q: "Câu 12: “Thượng tôn luật pháp” là gì?", a: "Mọi người đều phải tuân theo luật pháp" },
-  { q: "Câu 13: Cho biết một ngành hay phần của công quyền.", a: "Tổng Thống" },
-  { q: "Câu 14: Cách nào ngăn cản một ngành công quyền trở thành quá mạnh?", a: "phân quyền" },
-  { q: "Câu 15: Ai phụ trách hành pháp?", a: "Tổng Thống" },
-  { q: "Câu 16: Ai làm luật liên bang?", a: "Quốc Hội" },
-  { q: "Câu 17: Hai phần của Quốc Hội Hoa Kỳ là gì?", a: "Thượng và Hạ Nghị Viện" },
-  { q: "Câu 18: Có bao nhiêu Thượng Nghị Sĩ Liên Bang?", a: "một trăm (100)" },
-  { q: "Câu 19: Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?", a: "sáu (6)" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 2: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 3: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 4: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  { q: "Câu 5: ", a: "" },
-  
-  // 👆 Add the rest of your 100 questions here in the same format
+  { q: "What is the supreme law of the land?", a: "Hiến pháp" },
+  { q: "What does the Constitution do?", a: "Thiết lập chính phủ, định nghĩa quyền lực, bảo vệ quyền lợi công dân" },
+  { q: "The idea of self-government is in the first three words of the Constitution. What are these words?", a: "Chúng ta là nhân dân (We the People)" },
+  { q: "What is an amendment?", a: "Một sự thay đổi hoặc bổ sung Hiến pháp" },
+  { q: "What do we call the first ten amendments to the Constitution?", a: "Tuyên ngôn Nhân quyền (Bill of Rights)" },
+  { q: "What is one right or freedom from the First Amendment?", a: "Tự do ngôn luận, tôn giáo, hội họp, báo chí, kiến nghị chính phủ" },
+  { q: "How many amendments does the Constitution have?", a: "27" },
+  { q: "What did the Declaration of Independence do?", a: "Tuyên bố độc lập khỏi Anh" },
+  { q: "What are two rights in the Declaration of Independence?", a: "Quyền sống và quyền tự do" },
+  { q: "What is freedom of religion?", a: "Bạn có thể theo hoặc không theo bất kỳ tôn giáo nào" },
+  // You can continue adding all 100 Q&A pairs here
 ];
 
 let index = 0;
+
 function showCard(i){
   document.getElementById("question").innerText = cards[i].q;
   document.getElementById("answer").innerText = cards[i].a;
-  document.getElementById("counter").innerText = `Card ${i+1} of ${cards.length}`;
+
+  // Add question number text
+  document.getElementById("qnum-front").innerText = "Question " + (i + 1);
+  document.getElementById("qnum-back").innerText = "Question " + (i + 1);
+
+  document.getElementById("counter").innerText = `Card ${i + 1} of ${cards.length}`;
   document.querySelector('.card').classList.remove('flip');
 }
-function nextCard(){ if(index < cards.length-1){ index++; showCard(index);} }
-function prevCard(){ if(index > 0){ index--; showCard(index);} }
+
+function nextCard(){
+  if(index < cards.length - 1){
+    index++;
+    showCard(index);
+  }
+}
+
+function prevCard(){
+  if(index > 0){
+    index--;
+    showCard(index);
+  }
+}
 
 showCard(index);
 </script>
