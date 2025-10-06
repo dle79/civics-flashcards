@@ -2,48 +2,102 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Civics Flashcards</title>
+<title>100 Civics Flashcards</title>
 <style>
-  body { font-family: Arial, sans-serif; text-align:center; background:#f5f5f5; }
-  .flashcard { width:300px; height:180px; margin:20px auto; perspective:1000px; }
-  .card { width:100%; height:100%; position:relative; transform-style:preserve-3d; transition:transform 0.6s; cursor:pointer; }
-  .card.flip { transform: rotateY(180deg); }
-  .front, .back {
-    position:absolute; width:100%; height:100%; backface-visibility:hidden;
-    display:flex; align-items:center; justify-content:center;
-    border:1px solid #333; border-radius:10px; background:#fff; padding:10px;
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 30px;
   }
-  .back { transform:rotateY(180deg); background:#e0f7fa; }
+
+  h2 { margin-top: 20px; font-size: 26px; }          /* Larger title */
+  p { font-size: 20px; line-height: 1.5; }           /* Larger card text */
+
+  .flashcard {
+    width: 380px; height: 240px; margin: 40px auto;
+    perspective: 1000px;
+  }
+
+  .card {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+
+  .card.flip { transform: rotateY(180deg); }
+
+  .front, .back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    display: flex; align-items: center; justify-content: center;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: #fff;
+    padding: 20px;
+    font-size: 20px;                   /* ⬅️ main font size for cards */
+    font-weight: bold;
+  }
+
+  .back { transform: rotateY(180deg); background: #e0f7fa; }
+
+  button {
+    margin: 10px;
+    padding: 12px 25px;
+    border: none;
+    background: #0077cc;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;                   /* ⬅️ bigger button text */
+  }
+
+  button:hover { background: #005fa3; }
 </style>
+
 </head>
 <body>
 
-<h2>🇺🇸 100 Civics Questions Flashcards 🇻🇳</h2>
+<h2>🇺🇸 U.S. Civics Flashcards 🇻🇳</h2>
+<p>Click the card to flip between English and Vietnamese</p>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-  <div class="card">
-    <div class="front">
-      <p><b>Question:</b> What is the supreme law of the land?</p>
-    </div>
-    <div class="back">
-      <p><b>Answer (Vietnamese):</b> Hiến pháp</p>
-    </div>
+<div id="flashcard" class="flashcard">
+  <div class="card" onclick="this.classList.toggle('flip')">
+    <div class="front"><p id="question"></p></div>
+    <div class="back"><p id="answer"></p></div>
   </div>
 </div>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-  <div class="card">
-    <div class="front">
-      <p><b>Question:</b> What does the Constitution do?</p>
-    </div>
-    <div class="back">
-      <p><b>Answer (Vietnamese):</b> Thiết lập chính phủ, định nghĩa quyền hạn, bảo vệ quyền lợi</p>
-    </div>
-  </div>
-</div>
+<button onclick="prevCard()">⬅️ Previous</button>
+<button onclick="nextCard()">Next ➡️</button>
+
+<p id="counter"></p>
 
 <script>
-  // Later, you can load all 100 questions from a JSON file if you want
+const cards = [
+  { q: "Câu 1:  Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
+  { q: "Câu 2: Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
+  { q: "The idea of self-government is in the first three words of the Constitution. What are these words?", a: "Chúng ta là nhân dân (We the People)" },
+  { q: "What is an amendment?", a: "Một sự thay đổi hoặc bổ sung Hiến pháp" },
+  { q: "What do we call the first ten amendments to the Constitution?", a: "Tuyên ngôn Nhân quyền (Bill of Rights)" },
+  // 👆 Add the rest of your 100 questions here in the same format
+];
+
+let index = 0;
+function showCard(i){
+  document.getElementById("question").innerText = cards[i].q;
+  document.getElementById("answer").innerText = cards[i].a;
+  document.getElementById("counter").innerText = `Card ${i+1} of ${cards.length}`;
+  document.querySelector('.card').classList.remove('flip');
+}
+function nextCard(){ if(index < cards.length-1){ index++; showCard(index);} }
+function prevCard(){ if(index > 0){ index--; showCard(index);} }
+
+showCard(index);
 </script>
 
 </body>
