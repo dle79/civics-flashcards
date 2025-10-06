@@ -151,8 +151,8 @@ function showCard(i){
   document.getElementById("answer").innerText = cards[i].a;
 
   // Add question number text
-  document.getElementById("qnum-front").innerText = "Question " + (i + 1);
-  document.getElementById("qnum-back").innerText = "Question " + (i + 1);
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
+  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1);
 
   document.getElementById("counter").innerText = `Card ${i + 1} of ${cards.length}`;
   document.querySelector('.card').classList.remove('flip');
