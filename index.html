@@ -107,18 +107,33 @@
   </div>
 </div>
 
-<button onclick="prevCard()">⬅️ Đi tiếp</button>
-<button onclick="nextCard()">Trở lại câu hỏi trước ➡️</button>
+<button onclick="prevCard()">⬅️ Trở lại câu hỏi trước</button>
+<button onclick="nextCard()">Đi tiếp ➡️</button>
 
 <p id="counter"></p>
 
 <script>
 const cards = [
-  { q: "Câu 1:  Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
+  { q: "Câu 1: Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
   { q: "Câu 2: Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
-  { q: "The idea of self-government is in the first three words of the Constitution. What are these words?", a: "Chúng ta là nhân dân (We the People)" },
-  { q: "What is an amendment?", a: "Một sự thay đổi hoặc bổ sung Hiến pháp" },
-  { q: "What do we call the first ten amendments to the Constitution?", a: "Tuyên ngôn Nhân quyền (Bill of Rights)" },
+  { q: "Câu 3: Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
+  { q: "Câu 4: Tu chính án là gì?", a: "một sự thay đổi (trong Hiến Pháp)" },
+  { q: "Câu 5: Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" },
+  { q: "Câu 6: Kể ra Một quyền hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?", a: "Tự do ngôn luận" },
+  { q: "Câu 7: Hiến Pháp có bao nhiêu tu chính án?", a: "hai mươi bảy (27)" },
+  { q: "Câu 8: Bản Tuyên Ngôn Độc Lập có ý nghĩa gì?", a: "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" },
+  { q: "Câu 9: Kể ra Hai quyền trong bản Bản Tuyên Ngôn Độc Lập?", a: "quyền sống và quyền tự do" },
+  { q: "Câu 10: Tự do tôn giáo là gì?", a: "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào" },
+  { q: "Câu 11: Hệ thống kinh tế của Hoa Kỳ gọi là gì?*", a: "kinh tế tư bản" },
+  { q: "Câu 12: “Thượng tôn luật pháp” là gì?", a: "Mọi người đều phải tuân theo luật pháp" },
+  { q: "Câu 13: Cho biết một ngành hay phần của công quyền.", a: "Tổng Thống" },
+  { q: "Câu 14: Cách nào ngăn cản một ngành công quyền trở thành quá mạnh?", a: "phân quyền" },
+  { q: "Câu 15: Ai phụ trách hành pháp?", a: "Tổng Thống" },
+  { q: "Câu 16: Ai làm luật liên bang?", a: "Quốc Hội" },
+  { q: "Câu 17: Hai phần của Quốc Hội Hoa Kỳ là gì?", a: "Thượng và Hạ Nghị Viện" },
+  { q: "Câu 18: Có bao nhiêu Thượng Nghị Sĩ Liên Bang?", a: "một trăm (100)" },
+  { q: "Câu 19: Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?", a: "sáu (6)" },
+  
   // 👆 Add the rest of your 100 questions here in the same format
 ];
 
