@@ -74,11 +74,11 @@
     font-weight: bold;
   }
 
-  /* 🔹 Answer side */
+  /* 🔹 Answer side (double size) */
   .back {
     background: #e0f7fa;
-    font-size: 24vw;
-    line-height: 1.2;
+    font-size: 48vw;              /* ⬆⬆ doubled from 24vw → 48vw */
+    line-height: 1.1;
     font-weight: bold;
     transform: rotateY(180deg);
   }
@@ -119,8 +119,8 @@
     font-size: 22vw;
     font-weight: bold;
     box-shadow: 0 8px 12px rgba(0,0,0,0.3);
-    max-width: 55vw;             /* ✅ wider so arrow + text fit */
-    white-space: nowrap;         /* ✅ keep text on one line */
+    max-width: 55vw;              /* ✅ wide enough for arrow + text */
+    white-space: nowrap;          /* ✅ keeps them on one line */
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -129,12 +129,12 @@
     background: #005fa3;
   }
 
-  /* 🔹 Counter (hidden or optional) */
+  /* 🔹 Hide counter */
   #counter {
     display: none;
   }
 
-  /* 🔹 Highlight */
+  /* 🔹 Highlight (uppercase) */
   .highlight {
     background-color: #fff176;
     color: #000;
@@ -149,17 +149,18 @@
     h2 { font-size: 80px; }
     .flashcard { height: 40vh; margin-bottom: 12vh; }
     .front { font-size: 64px; }
-    .back { font-size: 68px; }
+    .back { font-size: 128px; } /* double desktop answer size */
     .question-number { font-size: 42px; }
     .button-container { gap: 4vw; bottom: 3vh; }
     button {
       font-size: 70px;
       padding: 26px 0;
-      max-width: 300px;          /* a bit wider on desktop too */
+      max-width: 300px;
       white-space: nowrap;
     }
   }
 </style>
+
 
 
 </head>
