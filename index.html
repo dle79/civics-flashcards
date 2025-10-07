@@ -14,19 +14,22 @@
     text-align: center;
   }
 
+  /* 🔹 Title style */
   h2 {
-    margin-top: 15px;
-    font-size: 6vw; /* scales with screen width */
+    margin-top: 3vh;
+    font-size: 8vw;        /* much bigger on phones */
+    font-weight: bold;
+    color: #003366;
   }
 
   p {
-    font-size: 5vw; /* scales for phones too */
+    font-size: 5vw;
     line-height: 1.5;
   }
 
   .flashcard {
-    width: 90vw;          /* use 90% of screen width */
-    height: 65vh;         /* use 65% of screen height */
+    width: 90vw;
+    height: 65vh;
     margin: 4vh auto;
     perspective: 1000px;
   }
@@ -61,13 +64,13 @@
 
   .front {
     background: #fff;
-    font-size: 5vw;     /* English text */
+    font-size: 5vw;
     font-weight: bold;
   }
 
   .back {
     background: #e0f7fa;
-    font-size: 6vw;     /* Larger Vietnamese text */
+    font-size: 6vw;   /* Larger Vietnamese text */
     font-weight: bold;
     transform: rotateY(180deg);
   }
@@ -102,9 +105,9 @@
     margin-top: 1vh;
   }
 
-  /* Make it still look good on desktop */
+  /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
-    h2 { font-size: 28px; }
+    h2 { font-size: 40px; }
     .front { font-size: 20px; }
     .back { font-size: 23px; }
     .question-number { font-size: 18px; }
@@ -112,6 +115,7 @@
     #counter { font-size: 18px; }
   }
 </style>
+
 
 </head>
 <body>
