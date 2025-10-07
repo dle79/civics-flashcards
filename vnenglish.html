@@ -193,13 +193,15 @@ button {
   </div>
 </div>
 
-<div class="button-container" style="flex-direction: column; align-items: center; gap: 2vh;">
-  
+<!-- 🔹 Container for all controls -->
+<div class="button-container" style="flex-direction: column; align-items: center; gap: 3vh;">
+
   <!-- 🔢 Go to Question Section -->
-  <div style="display: flex; justify-content: center; align-items: center; gap: 3vw;">
-    <input type="number" id="gotoInput" min="1" max="100" 
+  <div class="goto-container" style="display: flex; justify-content: center; align-items: center; gap: 3vw;">
+    <input type="number" id="gotoInput" min="1" max="100"
            placeholder="Nhập số câu (1–100)"
-           style="font-size:6vw; padding:1.5vh 2vw; width:40vw; border-radius:12px; text-align:center; border:2px solid #0077cc;">
+           style="font-size:6vw; padding:1.5vh 2vw; width:40vw; border-radius:12px;
+                  text-align:center; border:2px solid #0077cc;">
     <button onclick="gotoCard()"
             style="font-size:6vw; padding:2vh 3vw; border:none; border-radius:12px;
                    background:#0077cc; color:white; font-weight:bold;">
@@ -207,12 +209,23 @@ button {
     </button>
   </div>
 
-  <!-- Navigation Buttons -->
-  <div style="display: flex; justify-content: center; align-items: center; gap: 8vw;">
-    <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
-    <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
+  <!-- ⬅️➡️ Navigation Buttons Section -->
+  <div class="nav-buttons" style="display: flex; justify-content: center; align-items: center; gap: 8vw;">
+    <button id="prevBtn" onclick="prevCard()"
+            style="flex: none; font-size:20vw; padding:5vh 0; max-width:45vw; border:none;
+                   border-radius:24px; background:#0077cc; color:white; font-weight:bold;
+                   box-shadow:0 8px 12px rgba(0,0,0,0.3);">
+      ⬅️ Trước
+    </button>
+    <button id="nextBtn" onclick="nextCard()"
+            style="flex: none; font-size:20vw; padding:5vh 0; max-width:45vw; border:none;
+                   border-radius:24px; background:#0077cc; color:white; font-weight:bold;
+                   box-shadow:0 8px 12px rgba(0,0,0,0.3);">
+      Tiếp ➡️
+    </button>
   </div>
 </div>
+
 
 
 <script>
