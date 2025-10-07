@@ -18,7 +18,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 2vh;
-    font-size: 13vw;              /* much bigger title on phones */
+    font-size: 13vw;              /* very large title */
     font-weight: bold;
     color: #003366;
   }
@@ -30,9 +30,9 @@
 
   /* 🔹 Flashcard container */
   .flashcard {
-    width: 95vw;
-    height: 70vh;                 /* full height on phone */
-    margin: 3vh auto;
+    width: 96vw;
+    height: 75vh;                 /* taller for larger text */
+    margin: 2vh auto;
     perspective: 1000px;
   }
 
@@ -61,32 +61,35 @@
     justify-content: center;
     border: 5px solid #333;
     border-radius: 30px;
-    padding: 6vw;
+    padding: 8vw;
     box-sizing: border-box;
+    text-align: center;
   }
 
   /* 🔹 Question (front) */
   .front {
     background: #ffffff;
-    font-size: 9vw;               /* much bigger text */
+    font-size: 11vw;              /* ⬆️ bigger question text */
+    line-height: 1.4;
     font-weight: bold;
   }
 
   /* 🔹 Answer (back) */
   .back {
     background: #e0f7fa;
-    font-size: 10vw;              /* slightly bigger for Vietnamese text */
+    font-size: 12vw;              /* ⬆️ bigger Vietnamese text */
+    line-height: 1.5;
     font-weight: bold;
     transform: rotateY(180deg);
   }
 
-  /* 🔹 Question number (Câu hỏi 1...) */
+  /* 🔹 Question number */
   .question-number {
     position: absolute;
     top: 1.5vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 8vw;               /* bigger label */
+    font-size: 8vw;
     font-weight: bold;
     color: #222;
     text-shadow: 1px 1px 2px #ccc;
@@ -95,13 +98,13 @@
   /* 🔹 Buttons */
   button {
     margin: 1vh;
-    padding: 3vh 8vw;             /* much larger touch area */
+    padding: 3vh 10vw;
     border: none;
     background: #0077cc;
     color: #fff;
-    border-radius: 14px;
+    border-radius: 16px;
     cursor: pointer;
-    font-size: 8vw;               /* large text for tap targets */
+    font-size: 8.5vw;             /* ⬆️ larger button text */
     font-weight: bold;
     box-shadow: 0 6px 8px rgba(0,0,0,0.25);
   }
@@ -128,14 +131,15 @@
 
   /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
-    h2 { font-size: 55px; }
-    .front { font-size: 30px; }
-    .back { font-size: 34px; }
-    .question-number { font-size: 26px; }
-    button { font-size: 26px; padding: 16px 35px; }
+    h2 { font-size: 60px; }
+    .front { font-size: 38px; }
+    .back { font-size: 42px; }
+    .question-number { font-size: 28px; }
+    button { font-size: 28px; padding: 18px 45px; }
     #counter { font-size: 22px; }
   }
 </style>
+
 
 
 </head>
