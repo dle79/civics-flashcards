@@ -20,7 +20,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 1vh;
-    font-size: 8vw;             /* reasonable title size */
+    font-size: 8vw;             /* balanced title size */
     font-weight: bold;
     color: #003366;
   }
@@ -71,9 +71,9 @@
   .front { background: #ffffff; }
   .back  { background: #e0f7fa; transform: rotateY(180deg); }
 
-  /* 🔹 Question + Answer text */
+  /* 🔹 Text */
   .vn-text, .en-text {
-    font-size: 6vw;              /* same size for both */
+    font-size: 6vw;              /* equal size for both */
     font-weight: bold;
     color: #000;
     margin: 1vw 0;
@@ -169,12 +169,6 @@
   <button onclick="nextCard()">Tiếp ➡️</button>
 </div>
 
-<p>
-  <a href="index.html" style="font-size:4.5vw; text-decoration:none; color:#0077cc; font-weight:bold;">
-    Back to Vietnamese Page
-  </a>
-</p>
-
 <script>
 const cards = [
   {
@@ -192,39 +186,3 @@ const cards = [
   {
     q_vn: "Tu chính án là gì?",
     q_en: "What is an amendment?",
-    a_vn: "Một sự thay đổi (trong Hiến Pháp)",
-    a_en: "A change to the Constitution"
-  },
-  {
-    q_vn: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?",
-    q_en: "What do we call the first ten amendments to the Constitution?",
-    a_vn: "Luật Dân Quyền",
-    a_en: "The Bill of Rights"
-  }
-];
-
-let index = 0;
-
-function showCard(i){
-  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
-  document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1);
-  document.getElementById("question-vn").innerHTML = cards[i].q_vn;
-  document.getElementById("question-en").innerHTML = cards[i].q_en;
-  document.getElementById("answer-vn").innerHTML   = cards[i].a_vn;
-  document.getElementById("answer-en").innerHTML   = cards[i].a_en;
-  document.querySelector('.card').classList.remove('flip');
-}
-
-function nextCard(){
-  if(index < cards.length - 1){ index++; showCard(index); }
-}
-
-function prevCard(){
-  if(index > 0){ index--; showCard(index); }
-}
-
-document.addEventListener("DOMContentLoaded", () => showCard(index));
-</script>
-
-</body>
-</html>
