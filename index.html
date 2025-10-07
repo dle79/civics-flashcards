@@ -6,10 +6,12 @@
 <title>100 Câu Hỏi Lịch Sử Mỹ</title>
 
 <style>
-/* 🔹 Prevent zoom or double-tap issues on iPhone */
+/* 🧩 Prevent zoom or highlight on iPhone */
 html, body {
   touch-action: manipulation;
   -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%;
 }
 button, input {
   font-size: 16px !important;
@@ -18,9 +20,8 @@ button, input {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
-* { -webkit-text-size-adjust: 100%; }
 
-/* 🔹 Page layout */
+/* 🔹 Basic page layout */
 html, body {
   margin: 0;
   padding: 0;
@@ -32,28 +33,25 @@ html, body {
   overflow-x: hidden;
 }
 
-/* 🔹 Title */
+/* 🔹 Title + instruction */
 h2 {
-  margin-top: 1vh;
-  font-size: 14vw;
+  margin-top: 2vh;
+  font-size: 12vw;
   font-weight: bold;
   color: #003366;
 }
-
-/* 🔹 Instructions */
 p {
-  line-height: 1.4;
   font-size: 5vw;
+  line-height: 1.4;
 }
 
 /* 🔹 Flashcard area */
 .flashcard {
   width: 95vw;
-  height: 48vh;
-  margin: 2vh auto 10vh auto;
+  height: 42vh;          /* smaller to ensure space for buttons */
+  margin: 2vh auto 4vh auto;
   perspective: 1000px;
 }
-
 .card {
   width: 100%;
   height: 100%;
@@ -62,12 +60,11 @@ p {
   transition: transform 0.6s;
   cursor: pointer;
 }
-
 .card.flip {
   transform: rotateY(180deg);
 }
 
-/* 🔹 Front & Back */
+/* 🔹 Front & back faces */
 .front, .back {
   position: absolute;
   width: 100%;
@@ -78,25 +75,21 @@ p {
   align-items: center;
   justify-content: center;
   border: 5px solid #333;
-  border-radius: 30px;
+  border-radius: 25px;
   padding: 4vw;
   box-sizing: border-box;
   text-align: center;
 }
-
 .front {
   background: #fff;
-  font-size: 9vw;
+  font-size: 8vw;
   font-weight: bold;
-  line-height: 1.3;
 }
-
 .back {
   background: #e0f7fa;
-  font-size: 11vw;
+  font-size: 9vw;
   font-weight: bold;
   transform: rotateY(180deg);
-  line-height: 1.2;
 }
 
 /* 🔹 Question number */
@@ -105,7 +98,7 @@ p {
   top: 1vh;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 6vw;
+  font-size: 5vw;
   font-weight: bold;
   color: #222;
   text-shadow: 1px 1px 2px #ccc;
@@ -118,40 +111,35 @@ p {
   padding: 0 6px;
   border-radius: 6px;
   font-weight: bold;
-  text-transform: uppercase;
 }
 
-/* 🔹 Controls container */
+/* 🔹 Buttons area */
 .button-panel {
-  position: fixed;
-  bottom: 2vh;
-  left: 0;
-  right: 0;
+  position: relative;   /* ✅ changed from fixed */
+  bottom: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4vh;
-  z-index: 10;
+  gap: 3vh;
+  margin-bottom: 4vh;   /* ✅ creates visible space from bottom */
 }
 
-/* 🔹 Go-to input section */
+/* 🔹 Go-to-question input & button */
 .goto-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3vw;
-  margin-bottom: 2vh;
 }
-
 .goto-container input {
   font-size: 6vw;
   padding: 1.5vh 2vw;
-  width: 40vw;
+  width: 42vw;
   border-radius: 12px;
-  text-align: center;
   border: 2px solid #0077cc;
+  text-align: center;
 }
-
 .goto-container button {
   font-size: 6vw;
   padding: 1.5vh 3vw;
@@ -167,9 +155,8 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10vw;
+  gap: 8vw;
 }
-
 .nav-buttons button {
   font-size: 7vw;
   padding: 2vh 7vw;
@@ -179,28 +166,96 @@ p {
   background: #0077cc;
   color: white;
   font-weight: bold;
-  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 5px 8px rgba(0,0,0,0.25);
 }
-
-button:hover {
-  background: #005fa3;
-}
+button:hover { background: #005fa3; }
 
 /* 🖥 Desktop tweak */
 @media (min-width: 768px) {
   h2 { font-size: 80px; }
-  .front { font-size: 40px; }
-  .back { font-size: 50px; }
-  .question-number { font-size: 30px; }
-  .nav-buttons button { font-size: 26px; min-width: 200px; }
+  .front { font-size: 36px; }
+  .back { font-size: 42px; }
+  .question-number { font-size: 26px; }
+  .goto-container input { font-size: 24px; width: 200px; }
+  .goto-container button, .nav-buttons button { font-size: 26px; min-width: 200px; }
 }
 </style>
 </head>
 
 <body>
-  <h2>🇺🇸 100 Câu Hỏi Lịch Sử Mỹ 🇻🇳</h2>
-  <p>Nhấn vào thẻ để xem câu trả lời</p>
+<h2>🇺🇸 100 Câu Hỏi Lịch Sử Mỹ 🇻🇳</h2>
+<p>Nhấn vào thẻ để xem câu trả lời</p>
 
-  <div id="flashcard" class="flashcard">
-    <div class="card" onclick="this.classList.toggle('flip')">
-      <div class="fron
+<div id="flashcard" class="flashcard">
+  <div class="card" onclick="this.classList.toggle('flip')">
+    <div class="front">
+      <div class="question-number" id="qnum-front"></div>
+      <p id="question"></p>
+    </div>
+    <div class="back">
+      <div class="question-number" id="qnum-back"></div>
+      <p id="answer"></p>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 Button Section -->
+<div class="button-panel">
+  <div class="goto-container">
+    <input type="number" id="gotoInput" min="1" max="100" placeholder="Nhập số câu (1–100)">
+    <button onclick="gotoCard()">Đến câu hỏi</button>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
+    <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
+  </div>
+</div>
+
+<script>
+const cards = [
+  { q: "Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
+  { q: "Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
+  { q: "Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
+  { q: "Tu chính án là gì?", a: "Một sự thay đổi (trong Hiến Pháp)" },
+  { q: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" }
+  // Add all 100 later or fetch from civics_questions_vi_en.json
+];
+
+let index = 0;
+
+function showCard(i) {
+  document.getElementById("question").innerHTML = cards[i].q;
+  document.getElementById("answer").innerHTML = cards[i].a;
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.querySelector('.card').classList.remove('flip');
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  prevBtn.style.display = i === 0 ? "none" : "inline-block";
+  nextBtn.style.display = i === cards.length - 1 ? "none" : "inline-block";
+}
+
+function nextCard() {
+  if (index < cards.length - 1) { index++; showCard(index); }
+}
+
+function prevCard() {
+  if (index > 0) { index--; showCard(index); }
+}
+
+function gotoCard() {
+  const num = parseInt(document.getElementById("gotoInput").value, 10);
+  if (!isNaN(num) && num >= 1 && num <= cards.length) {
+    index = num - 1;
+    showCard(index);
+  } else {
+    alert("Vui lòng nhập số câu từ 1 đến " + cards.length);
+  }
+}
+
+showCard(index);
+</script>
+</body>
+</html>
