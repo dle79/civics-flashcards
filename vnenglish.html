@@ -208,8 +208,11 @@ const cards = [
 let index = 0;
 
 function showCard(i){
-  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
-  document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1);
+  //document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
+  //document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1);
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+
   document.getElementById("question-vn").innerHTML = cards[i].q_vn;
   document.getElementById("question-en").innerHTML = cards[i].q_en;
   document.getElementById("answer-vn").innerHTML   = cards[i].a_vn;
