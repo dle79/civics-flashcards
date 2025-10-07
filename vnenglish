@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>100 Civics Flashcards - English</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+    overflow-x: hidden;
+  }
+
+  h2 {
+    margin-top: 1vh;
+    font-size: 16vw;
+    font-weight: bold;
+    color: #003366;
+  }
+
+  p {
+    line-height: 1.6;
+    font-size: 6vw;
+  }
+
+  .flashcard {
+    width: 96vw;
+    height: 45vh;
+    margin: 2vh auto 10vh auto;
+    perspective: 1000px;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+  }
+
+  .card.flip {
+    transform: rotateY(180deg);
+  }
+
+  .front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 6px solid #333;
+    border-radius: 35px;
+    padding: 5vw;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .front {
+    background: #ffffff;
+    font-size: 22vw;
+    line-height: 1.2;
+    font-weight: bold;
+  }
+
+  .back {
+    background: #e0f7fa;
+    font-size: 48vw;
+    line-height: 1.1;
+    font-weight: bold;
+    transform: rotateY(180deg);
+  }
+
+  .question-number {
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20vw;
+    font-weight: bold;
+    color: #222;
+    text-shadow: 2px 2px 3px #ccc;
+  }
+
+  .button-container {
+    position: fixed;
+    bottom: 2vh;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 12vw;
+    z-index: 10;
+  }
+
+  button {
+    flex: 1;
+    padding: 6vh 0;
+    border: none;
+    background: #0077cc;
+    color: #fff;
+    border-radius: 28px;
+    cursor: pointer;
+    font-size: 22vw;
+    font-weight: bold;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.3);
+    max-width: 55vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  button:hover {
+    background: #005fa3;
+  }
+
+  .highlight {
+    background-color: #fff176;
+    color: #000;
+    padding: 0 6px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    h2 { font-size: 80px; }
+    .flashcard { height: 40vh; margin-bottom: 12vh; }
+    .front { font-size: 64px; }
+    .back { font-size: 128px; }
+    .question-number { font-size: 42px; }
+    .button-container { gap: 4vw; bottom: 3vh; }
+    button {
+      font-size: 70px;
+      padding: 26px 0;
+      max-width: 300px;
+      white-space: nowrap;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h2>🇺🇸 100 Civics Questions - English</h2>
+<p>Tap the card to flip between question and answer</p>
+
+<div id="flashcard" class="flashcard">
+  <div class="card" onclick="this.classList.toggle('flip')">
+    <div class="front">
+      <div class="question-number" id="qnum-front"></div>
+      <p id="question"></p>
+    </div>
+    <div class="back">
+      <div class="question-number" id="qnum-back"></div>
+      <p id="answer"></p>
+    </div>
+  </div>
+</div>
+
+<div class="button-container">
+  <button onclick="prevCard()">⬅️ Prev</button>
+  <button onclick="nextCard()">Next ➡️</button>
+</div>
+
+<p><a href="index.html" style="font-size:6vw; text-decoration:none; color:#0077cc; font-weight:bold;">🇻🇳 Back to Vietnamese Page</a></p>
+
+<script>
+const cards = [
+  { q: "What is the <span class='highlight'>supreme law</span> of the land?", a: "The Constitution" },
+  { q: "What does the <span class='highlight'>Constitution</span> do?", a: "Sets up the government" },
+  { q: "The idea of <span class='highlight'>self-government</span> is in the first three words of the Constitution. What are these words?", a: "We the People" },
+  { q: "What is an <span class='highlight'>amendment</span>?", a: "A change to the Constitution" },
+  { q: "What do we call the first ten amendments to the Constitution?", a: "The Bill of Rights" },
+  { q: "What is one right or freedom from the First Amendment?", a: "Speech" },
+  { q: "How many amendments does the Constitution have?", a: "27" },
+  { q: "What did the <span class='highlight'>Declaration of Independence</span> do?", a: "Declared our independence from Great Britain" },
+  { q: "What are two rights in the Declaration of Independence?", a: "Life and liberty" },
+  { q: "What is <span class='highlight'>freedom of religion</span>?", a: "You can practice any religion, or not practice a religion" }
+];
+
+let index = 0;
+
+function showCard(i){
+  document.getElementById("question").innerHTML = cards[i].q;
+  document.getElementById("answer").innerHTML = cards[i].a;
+  document.getElementById("qnum-front").innerText = "Question " + (i + 1);
+  document.getElementById("qnum-back").innerText = "Question " + (i + 1);
+  document.querySelector('.card').classList.remove('flip');
+}
+
+function nextCard(){
+  if(index < cards.length - 1){
+    index++;
+    showCard(index);
+  }
+}
+
+function prevCard(){
+  if(index > 0){
+    index--;
+    showCard(index);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+  showCard(index);
+});
+</script>
+
+</body>
+</html>
