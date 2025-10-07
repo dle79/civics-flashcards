@@ -18,7 +18,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 2vh;
-    font-size: 13vw;              /* large title on phones */
+    font-size: 13vw;            /* very large title */
     font-weight: bold;
     color: #003366;
   }
@@ -31,7 +31,7 @@
   /* 🔹 Flashcard container */
   .flashcard {
     width: 94vw;
-    height: 55vh;                 /* ⬇ shorter card so buttons fit */
+    height: 50vh;               /* short enough to see buttons */
     margin: 2vh auto;
     perspective: 1000px;
   }
@@ -61,7 +61,7 @@
     justify-content: center;
     border: 5px solid #333;
     border-radius: 30px;
-    padding: 6vw;
+    padding: 5vw;
     box-sizing: border-box;
     text-align: center;
   }
@@ -69,15 +69,15 @@
   /* 🔹 Question side */
   .front {
     background: #ffffff;
-    font-size: 9.5vw;             /* big question text */
-    line-height: 1.4;
+    font-size: 12vw;            /* ⬆ bigger question text */
+    line-height: 1.3;
     font-weight: bold;
   }
 
   /* 🔹 Answer side */
   .back {
     background: #e0f7fa;
-    font-size: 10.5vw;            /* slightly bigger answer */
+    font-size: 13vw;            /* ⬆ even bigger Vietnamese text */
     line-height: 1.4;
     font-weight: bold;
     transform: rotateY(180deg);
@@ -95,40 +95,41 @@
     text-shadow: 1px 1px 2px #ccc;
   }
 
-  /* 🔹 Buttons (large & always visible) */
+  /* 🔹 Buttons container */
   .button-container {
     display: flex;
     justify-content: center;
-    gap: 6vw;
+    gap: 8vw;
     margin-top: 1vh;
   }
 
+  /* 🔹 Buttons */
   button {
     flex: 1;
     padding: 3vh 0;
     border: none;
     background: #0077cc;
     color: #fff;
-    border-radius: 16px;
+    border-radius: 18px;
     cursor: pointer;
-    font-size: 9vw;               /* ⬆ bigger text */
+    font-size: 9vw;             /* ⬆ larger button text */
     font-weight: bold;
     box-shadow: 0 6px 8px rgba(0,0,0,0.25);
-    max-width: 40vw;              /* keep nice shape side-by-side */
+    max-width: 40vw;
   }
 
   button:hover {
     background: #005fa3;
   }
 
-  /* 🔹 Counter text */
+  /* 🔹 Counter */
   #counter {
     font-size: 6.5vw;
     margin-top: 1.5vh;
     font-weight: bold;
   }
 
-  /* 🔹 Highlight helper */
+  /* 🔹 Highlight */
   .highlight {
     background-color: #fff3b0;
     color: #000;
@@ -137,13 +138,13 @@
     font-weight: bold;
   }
 
-  /* 🖥 Desktop adjustments */
+  /* 🖥 Desktop view adjustments */
   @media (min-width: 768px) {
     h2 { font-size: 60px; }
-    .flashcard { height: 50vh; }
-    .front { font-size: 30px; }
-    .back { font-size: 34px; }
-    .question-number { font-size: 26px; }
+    .flashcard { height: 45vh; }
+    .front { font-size: 40px; }
+    .back { font-size: 44px; }
+    .question-number { font-size: 28px; }
     .button-container { gap: 2vw; }
     button { font-size: 28px; padding: 18px 0; max-width: 200px; }
     #counter { font-size: 22px; }
