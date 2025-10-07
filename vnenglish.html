@@ -186,3 +186,39 @@ const cards = [
   {
     q_vn: "Tu chính án là gì?",
     q_en: "What is an amendment?",
+    a_vn: "Một sự thay đổi (trong Hiến Pháp)",
+    a_en: "A change to the Constitution"
+  },
+  {
+    q_vn: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?",
+    q_en: "What do we call the first ten amendments to the Constitution?",
+    a_vn: "Luật Dân Quyền",
+    a_en: "The Bill of Rights"
+  }
+];
+
+let index = 0;
+
+function showCard(i){
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
+  document.getElementById("qnum-back").innerText  = "Câu trả lời " + (i + 1);
+  document.getElementById("question-vn").innerHTML = cards[i].q_vn;
+  document.getElementById("question-en").innerHTML = cards[i].q_en;
+  document.getElementById("answer-vn").innerHTML   = cards[i].a_vn;
+  document.getElementById("answer-en").innerHTML   = cards[i].a_en;
+  document.querySelector('.card').classList.remove('flip');
+}
+
+function nextCard(){
+  if(index < cards.length - 1){ index++; showCard(index); }
+}
+
+function prevCard(){
+  if(index > 0){ index--; showCard(index); }
+}
+
+document.addEventListener("DOMContentLoaded", () => showCard(index));
+</script>
+
+</body>
+</html>
