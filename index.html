@@ -153,6 +153,17 @@
     button { font-size: 70px; padding: 26px 0; max-width: 260px; }
     #counter { font-size: 26px; }
   }
+
+  .highlight {
+  background-color: #fff176;   /* bright yellow highlight */
+  color: #000;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;   /* ✅ makes all highlight text uppercase */
+}
+
+
 </style>
 
 </head>
@@ -184,12 +195,12 @@
 
 <script>
 const cards = [
-  { q: "Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
-  { q: "Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
-  { q: "Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
+  { q: "<span class='highlight'>LUẬT CAO NHẤT</span> của quốc gia là gì?", a: "Hiến Pháp" },
+  { q: "<span class='highlight'>Hiến Pháp</span> có mục đích gì?", a: "Thiết lập chánh phủ" },
+  { q: "Ý tưởng tự quản trị nằm trong <span class='highlight'>BA CHỮ ĐẦU TIÊN</span> của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
   { q: "Tu chính án là gì?", a: "một sự thay đổi (trong Hiến Pháp)" },
-  { q: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" },
-  { q: "Kể ra Một quyền hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?", a: "Tự do ngôn luận" },
+  { q: "Ta gọi <span class='highlight'>MƯỜI TU CHÍNH</span> đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" },
+  { q: "<span class='highlight'>KỂ RA MỘT QUYỀN</span> hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?", a: "Tự do ngôn luận" },
   { q: "Hiến Pháp có bao nhiêu tu chính án?", a: "hai mươi bảy (27)" },
   { q: "Bản Tuyên Ngôn Độc Lập có ý nghĩa gì?", a: "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" },
   { q: "Kể ra Hai quyền trong bản Bản Tuyên Ngôn Độc Lập?", a: "quyền sống và quyền tự do" },
@@ -251,8 +262,10 @@ const cards = [
 let index = 0;
 
 function showCard(i){
-  document.getElementById("question").innerText = cards[i].q;
-  document.getElementById("answer").innerText = cards[i].a;
+  document.getElementById("question").innerHTML = cards[i].q;
+  document.getElementById("answer").innerHTML = cards[i].a;
+  //document.getElementById("question").innerText = cards[i].q;
+  //document.getElementById("answer").innerText = cards[i].a;
 
   // Add question number text
   document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
