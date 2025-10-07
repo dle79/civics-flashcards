@@ -193,10 +193,27 @@ button {
   </div>
 </div>
 
-<div class="button-container">
-  <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
-  <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
+<div class="button-container" style="flex-direction: column; align-items: center; gap: 2vh;">
+  
+  <!-- 🔢 Go to Question Section -->
+  <div style="display: flex; justify-content: center; align-items: center; gap: 3vw;">
+    <input type="number" id="gotoInput" min="1" max="100" 
+           placeholder="Nhập số câu (1–100)"
+           style="font-size:6vw; padding:1.5vh 2vw; width:40vw; border-radius:12px; text-align:center; border:2px solid #0077cc;">
+    <button onclick="gotoCard()"
+            style="font-size:6vw; padding:2vh 3vw; border:none; border-radius:12px;
+                   background:#0077cc; color:white; font-weight:bold;">
+      🔢 Đến câu hỏi
+    </button>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div style="display: flex; justify-content: center; align-items: center; gap: 8vw;">
+    <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
+    <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
+  </div>
 </div>
+
 
 <script>
 const cards = [
@@ -850,6 +867,19 @@ function prevCard(){
     showCard(index);
   }
 }
+
+  function gotoCard() {
+  const input = document.getElementById("gotoInput");
+  const num = parseInt(input.value, 10);
+
+  if (!isNaN(num) && num >= 1 && num <= cards.length) {
+    index = num - 1;
+    showCard(index);
+  } else {
+    alert("Vui lòng nhập số câu từ 1 đến " + cards.length);
+  }
+}
+
 
 document.addEventListener("DOMContentLoaded", () => showCard(index));
 </script>
