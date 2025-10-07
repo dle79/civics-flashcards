@@ -18,7 +18,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 1vh;
-    font-size: 16vw;               /* massive title */
+    font-size: 16vw;               /* huge title */
     font-weight: bold;
     color: #003366;
   }
@@ -31,8 +31,8 @@
   /* 🔹 Flashcard container */
   .flashcard {
     width: 96vw;
-    height: 45vh;                  /* short enough for buttons */
-    margin: 2vh auto 10vh auto;    /* add large bottom spacing */
+    height: 45vh;
+    margin: 2vh auto 10vh auto;
     perspective: 1000px;
   }
 
@@ -69,7 +69,7 @@
   /* 🔹 Question side */
   .front {
     background: #ffffff;
-    font-size: 22vw;               /* very large question text */
+    font-size: 22vw;
     line-height: 1.2;
     font-weight: bold;
   }
@@ -77,7 +77,7 @@
   /* 🔹 Answer side */
   .back {
     background: #e0f7fa;
-    font-size: 24vw;               /* very large Vietnamese answer */
+    font-size: 24vw;
     line-height: 1.2;
     font-weight: bold;
     transform: rotateY(180deg);
@@ -89,7 +89,7 @@
     top: 1vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 20vw;               /* ⬆⬆ doubled size */
+    font-size: 20vw;
     font-weight: bold;
     color: #222;
     text-shadow: 2px 2px 3px #ccc;
@@ -98,48 +98,50 @@
   /* 🔹 Buttons container */
   .button-container {
     position: fixed;
-    bottom: 2vh;                   /* place lower near bottom edge */
+    bottom: 2vh;
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 12vw;                     /* space between buttons */
+    gap: 12vw;
     z-index: 10;
   }
 
   /* 🔹 Buttons */
   button {
     flex: 1;
-    padding: 6vh 0;                /* ⬆ bigger height */
+    padding: 6vh 0;
     border: none;
     background: #0077cc;
     color: #fff;
     border-radius: 28px;
     cursor: pointer;
-    font-size: 22vw;               /* ⬆⬆ doubled text size */
+    font-size: 22vw;
     font-weight: bold;
     box-shadow: 0 8px 12px rgba(0,0,0,0.3);
-    max-width: 46vw;
+    max-width: 55vw;             /* ✅ wider so arrow + text fit */
+    white-space: nowrap;         /* ✅ keep text on one line */
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   button:hover {
     background: #005fa3;
   }
 
-  /* 🔹 Counter */
+  /* 🔹 Counter (hidden or optional) */
   #counter {
-    font-size: 8vw;
-    margin-top: 1vh;
-    font-weight: bold;
+    display: none;
   }
 
   /* 🔹 Highlight */
   .highlight {
-    background-color: #fff3b0;
+    background-color: #fff176;
     color: #000;
     padding: 0 6px;
     border-radius: 6px;
     font-weight: bold;
+    text-transform: uppercase;
   }
 
   /* 🖥 Desktop adjustments */
@@ -150,21 +152,15 @@
     .back { font-size: 68px; }
     .question-number { font-size: 42px; }
     .button-container { gap: 4vw; bottom: 3vh; }
-    button { font-size: 70px; padding: 26px 0; max-width: 260px; }
-    #counter { font-size: 26px; }
+    button {
+      font-size: 70px;
+      padding: 26px 0;
+      max-width: 300px;          /* a bit wider on desktop too */
+      white-space: nowrap;
+    }
   }
-
-  .highlight {
-  background-color: #fff176;   /* bright yellow highlight */
-  color: #000;
-  padding: 0 6px;
-  border-radius: 6px;
-  font-weight: bold;
-  text-transform: uppercase;   /* ✅ makes all highlight text uppercase */
-}
-
-
 </style>
+
 
 </head>
 <body>
