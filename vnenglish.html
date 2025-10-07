@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Vietnamese + English Civics Flashcards</title>
 
-
 <style>
   html {
-  -webkit-text-size-adjust: 100%; /* Prevent font zoom on iOS */
-}
+    -webkit-text-size-adjust: 100%; /* Prevent font zoom on iOS */
+  }
 
   html, body {
     margin: 0;
@@ -76,11 +75,11 @@
   .front { background: #ffffff; }
   .back  { background: #e0f7fa; transform: rotateY(180deg); }
 
-  /* 🔹 Text */
+  /* 🔹 Text styles */
   .vn-text {
     font-size: 6vw;
     font-weight: bold;
-    color: #000;               /* Vietnamese in black */
+    color: #000;               /* Vietnamese text in black */
     margin: 1vw 0;
     line-height: 1.4;
   }
@@ -88,7 +87,7 @@
   .en-text {
     font-size: 6vw;
     font-weight: bold;
-    color: #0077cc;            /* English in blue */
+    color: #0077cc;            /* English text in blue */
     margin: 1vw 0;
     line-height: 1.4;
   }
@@ -182,7 +181,6 @@
   <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
 </div>
 
-
 <script>
 const cards = [
   {
@@ -214,17 +212,17 @@ const cards = [
 let index = 0;
 
 function showCard(i){
-  document.getElementById("question").innerHTML = cards[i].q;
-  document.getElementById("answer").innerHTML = cards[i].a;
+  // 🔹 Update text on front and back (Vietnamese + English)
+  document.getElementById("question-vn").innerHTML = cards[i].q_vn;
+  document.getElementById("question-en").innerHTML = cards[i].q_en;
+  document.getElementById("answer-vn").innerHTML = cards[i].a_vn;
+  document.getElementById("answer-en").innerHTML = cards[i].a_en;
 
-  // Update the question number text
+  // 🔹 Update the question number text
   document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
   document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1) + " / " + cards.length;
 
-  // Update bottom counter
-  document.getElementById("counter").innerText = "Thẻ " + (i + 1) + " / " + cards.length;
-
-  // Reset flip state
+  // 🔹 Reset flip state
   document.querySelector('.card').classList.remove('flip');
 
   // 🔹 Hide or show navigation buttons
@@ -244,13 +242,18 @@ function showCard(i){
   }
 }
 
-
 function nextCard(){
-  if(index < cards.length - 1){ index++; showCard(index); }
+  if(index < cards.length - 1){
+    index++;
+    showCard(index);
+  }
 }
 
 function prevCard(){
-  if(index > 0){ index--; showCard(index); }
+  if(index > 0){
+    index--;
+    showCard(index);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => showCard(index));
