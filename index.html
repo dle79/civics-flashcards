@@ -14,20 +14,23 @@
     text-align: center;
   }
 
+  /* 🔹 Title (100 câu hỏi lịch sử Mỹ) */
   h2 {
-    margin-top: 15px;
-    font-size: 6vw; /* scales with screen width */
+    margin-top: 2vh;
+    font-size: 11vw;          /* super large on phones */
+    font-weight: bold;
+    color: #003366;
   }
 
   p {
-    font-size: 5vw; /* scales for phones too */
-    line-height: 1.5;
+    line-height: 1.7;
   }
 
+  /* 🔹 Flashcard container */
   .flashcard {
-    width: 90vw;          /* use 90% of screen width */
-    height: 65vh;         /* use 65% of screen height */
-    margin: 4vh auto;
+    width: 95vw;
+    height: 70vh;             /* taller for larger text */
+    margin: 3vh auto;
     perspective: 1000px;
   }
 
@@ -44,6 +47,7 @@
     transform: rotateY(180deg);
   }
 
+  /* 🔹 Both sides of card */
   .front, .back {
     position: absolute;
     width: 100%;
@@ -53,63 +57,81 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid #333;
-    border-radius: 15px;
-    padding: 5vw;
+    border: 4px solid #333;
+    border-radius: 25px;
+    padding: 6vw;
     box-sizing: border-box;
   }
 
+  /* 🔹 English (front) */
   .front {
-    background: #fff;
-    font-size: 5vw;     /* English text */
+    background: #ffffff;
+    font-size: 7.5vw;         /* bigger questions */
     font-weight: bold;
   }
 
+  /* 🔹 Vietnamese (back) */
   .back {
     background: #e0f7fa;
-    font-size: 6vw;     /* Larger Vietnamese text */
+    font-size: 8.5vw;         /* even bigger answers */
     font-weight: bold;
     transform: rotateY(180deg);
   }
 
+  /* 🔹 Question number (Câu hỏi 1, Câu hỏi 2, etc.) */
   .question-number {
     position: absolute;
     top: 2vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 4.5vw;
+    font-size: 7vw;           /* larger number text */
     font-weight: bold;
-    color: #444;
+    color: #222;
+    text-shadow: 1px 1px 2px #ccc;
   }
 
+  /* 🔹 Buttons */
   button {
-    margin: 1vh;
-    padding: 2vh 4vw;
+    margin: 1.5vh;
+    padding: 3vh 6vw;
     border: none;
     background: #0077cc;
     color: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    font-size: 4.5vw;
+    font-size: 7vw;           /* very large, easy tap */
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
   }
 
   button:hover {
     background: #005fa3;
   }
 
+  /* 🔹 Counter text */
   #counter {
-    font-size: 4vw;
+    font-size: 6vw;
     margin-top: 1vh;
+    font-weight: bold;
   }
 
-  /* Make it still look good on desktop */
+  /* 🔹 Highlight helper */
+  .highlight {
+    background-color: #fff3b0;
+    color: #000;
+    padding: 0 6px;
+    border-radius: 6px;
+    font-weight: bold;
+  }
+
+  /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
-    h2 { font-size: 28px; }
-    .front { font-size: 20px; }
-    .back { font-size: 23px; }
-    .question-number { font-size: 18px; }
-    button { font-size: 18px; padding: 12px 25px; }
-    #counter { font-size: 18px; }
+    h2 { font-size: 60px; }
+    .front { font-size: 32px; }
+    .back { font-size: 36px; }
+    .question-number { font-size: 28px; }
+    button { font-size: 26px; padding: 18px 40px; }
+    #counter { font-size: 24px; }
   }
 </style>
 
