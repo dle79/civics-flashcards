@@ -20,7 +20,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 1vh;
-    font-size: 8vw;             /* balanced title size */
+    font-size: 8vw;
     font-weight: bold;
     color: #003366;
   }
@@ -72,10 +72,18 @@
   .back  { background: #e0f7fa; transform: rotateY(180deg); }
 
   /* 🔹 Text */
-  .vn-text, .en-text {
-    font-size: 6vw;              /* equal size for both */
+  .vn-text {
+    font-size: 6vw;
     font-weight: bold;
-    color: #000;
+    color: #000;               /* Vietnamese in black */
+    margin: 1vw 0;
+    line-height: 1.4;
+  }
+
+  .en-text {
+    font-size: 6vw;
+    font-weight: bold;
+    color: #0077cc;            /* English in blue */
     margin: 1vw 0;
     line-height: 1.4;
   }
@@ -201,7 +209,7 @@ let index = 0;
 
 function showCard(i){
   document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
-  document.getElementById("qnum-back").innerText  = "Câu trả lời " + (i + 1);
+  document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1);
   document.getElementById("question-vn").innerHTML = cards[i].q_vn;
   document.getElementById("question-en").innerHTML = cards[i].q_en;
   document.getElementById("answer-vn").innerHTML   = cards[i].a_vn;
