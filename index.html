@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>100 Civics Flashcards</title>
 <style>
   html, body {
     margin: 0;
@@ -12,24 +7,26 @@
     font-family: Arial, sans-serif;
     background: #f5f5f5;
     text-align: center;
+    overflow-x: hidden;
   }
 
-  /* 🔹 Title (100 câu hỏi lịch sử Mỹ) */
+  /* 🔹 Title */
   h2 {
     margin-top: 2vh;
-    font-size: 11vw;          /* super large on phones */
+    font-size: 13vw;              /* much bigger title on phones */
     font-weight: bold;
     color: #003366;
   }
 
   p {
     line-height: 1.7;
+    font-size: 5.5vw;
   }
 
   /* 🔹 Flashcard container */
   .flashcard {
     width: 95vw;
-    height: 70vh;             /* taller for larger text */
+    height: 70vh;                 /* full height on phone */
     margin: 3vh auto;
     perspective: 1000px;
   }
@@ -57,34 +54,34 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 4px solid #333;
-    border-radius: 25px;
+    border: 5px solid #333;
+    border-radius: 30px;
     padding: 6vw;
     box-sizing: border-box;
   }
 
-  /* 🔹 English (front) */
+  /* 🔹 Question (front) */
   .front {
     background: #ffffff;
-    font-size: 7.5vw;         /* bigger questions */
+    font-size: 9vw;               /* much bigger text */
     font-weight: bold;
   }
 
-  /* 🔹 Vietnamese (back) */
+  /* 🔹 Answer (back) */
   .back {
     background: #e0f7fa;
-    font-size: 8.5vw;         /* even bigger answers */
+    font-size: 10vw;              /* slightly bigger for Vietnamese text */
     font-weight: bold;
     transform: rotateY(180deg);
   }
 
-  /* 🔹 Question number (Câu hỏi 1, Câu hỏi 2, etc.) */
+  /* 🔹 Question number (Câu hỏi 1...) */
   .question-number {
     position: absolute;
-    top: 2vh;
+    top: 1.5vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 7vw;           /* larger number text */
+    font-size: 8vw;               /* bigger label */
     font-weight: bold;
     color: #222;
     text-shadow: 1px 1px 2px #ccc;
@@ -92,16 +89,16 @@
 
   /* 🔹 Buttons */
   button {
-    margin: 1.5vh;
-    padding: 3vh 6vw;
+    margin: 1vh;
+    padding: 3vh 8vw;             /* much larger touch area */
     border: none;
     background: #0077cc;
     color: #fff;
-    border-radius: 12px;
+    border-radius: 14px;
     cursor: pointer;
-    font-size: 7vw;           /* very large, easy tap */
+    font-size: 8vw;               /* large text for tap targets */
     font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.25);
   }
 
   button:hover {
@@ -110,8 +107,8 @@
 
   /* 🔹 Counter text */
   #counter {
-    font-size: 6vw;
-    margin-top: 1vh;
+    font-size: 6.5vw;
+    margin-top: 1.5vh;
     font-weight: bold;
   }
 
@@ -126,135 +123,3 @@
 
   /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
-    h2 { font-size: 60px; }
-    .front { font-size: 32px; }
-    .back { font-size: 36px; }
-    .question-number { font-size: 28px; }
-    button { font-size: 26px; padding: 18px 40px; }
-    #counter { font-size: 24px; }
-  }
-</style>
-
-</head>
-<body>
-
-<h2>100 câu hỏi lịch sử Mỹ</h2>
-<p>Nhấn vào thẻ để xem câu trả lời</p>
-
-<div id="flashcard" class="flashcard">
-  <div class="card" onclick="this.classList.toggle('flip')">
-    <div class="front">
-      <div class="question-number" id="qnum-front"></div>
-      <p id="question"></p>
-    </div>
-    <div class="back">
-      <div class="question-number" id="qnum-back"></div>
-      <p id="answer"></p>
-    </div>
-  </div>
-</div>
-
-<button onclick="prevCard()">⬅️ Trở lại câu hỏi trước</button>
-<button onclick="nextCard()">Đi tiếp ➡️</button>
-
-<p id="counter"></p>
-
-<script>
-const cards = [
-  { q: "Luật cao nhất của quốc gia là gì?", a: "Hiến Pháp" },
-  { q: "Hiến Pháp có mục đích gì?", a: "Thiết lập chánh phủ" },
-  { q: "Ý tưởng tự quản trị nằm trong ba chữ đầu tiên của Hiến Pháp. Các chữ này là những chữ nào?", a: "Chúng tôi người dân (We the People)" },
-  { q: "Tu chính án là gì?", a: "một sự thay đổi (trong Hiến Pháp)" },
-  { q: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?", a: "Luật Dân Quyền" },
-  { q: "Kể ra Một quyền hoặc một tự do trong Tu Chính Án Đầu Tiên (First Amendment)?", a: "Tự do ngôn luận" },
-  { q: "Hiến Pháp có bao nhiêu tu chính án?", a: "hai mươi bảy (27)" },
-  { q: "Bản Tuyên Ngôn Độc Lập có ý nghĩa gì?", a: "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" },
-  { q: "Kể ra Hai quyền trong bản Bản Tuyên Ngôn Độc Lập?", a: "quyền sống và quyền tự do" },
-  { q: "Tự do tôn giáo là gì?", a: "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào" },
-  { q: "Hệ thống kinh tế của Hoa Kỳ gọi là gì?*", a: "kinh tế tư bản" },
-  { q: "“Thượng tôn luật pháp” là gì?", a: "Mọi người đều phải tuân theo luật pháp" },
-  { q: "Cho biết một ngành hay phần của công quyền.", a: "Tổng Thống" },
-  { q: "Cách nào ngăn cản một ngành công quyền trở thành quá mạnh?", a: "phân quyền" },
-  { q: "Ai phụ trách hành pháp?", a: "Tổng Thống" },
-  { q: "Ai làm luật liên bang?", a: "Quốc Hội" },
-  { q: "Hai phần của Quốc Hội Hoa Kỳ là gì?", a: "Thượng và Hạ Nghị Viện" },
-  { q: "Có bao nhiêu Thượng Nghị Sĩ Liên Bang?", a: "một trăm (100)" },
-  { q: "Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?", a: "sáu (6)" },
-  { q: "Ai là một trong những Thượng Nghị Sĩ Liên Bang của bạn?", a: "" },
-  { q: "Hạ-Nghị-Viện có bao nhiêu dân biểu?", a: "bốn trăm ba mươi lăm (435)" },
-  { q: "Chúng ta bầu dân biểu cho mấy năm?", a: "hai năm (2)" },
-  { q: "Cho biết tên dân biểu của bạn.", a: "" },
-  { q: "Thượng-nghị-sĩ đại diện ai?", a: "Tất cả người dân trong tiểu bang" },
-  { q: "Tại sao có những tiểu bang có nhiều đại biểu hơn các tiểu bang khác?", a: "(Vì) tiểu bang đó đông dân hơn" },
-  { q: "Nhiệm kỳ Tổng Thống là mấy năm?", a: "Bốn (4) năm" },
-  { q: "Bầu Tổng Thống vào tháng nào?", a: "Tháng Mười Một" },
-  { q: "Hiện nay tên Tổng Thống Hoa Kỳ là gì?", a: "" },
-  { q: "Hiện nay tên Phó Tổng Thống Hoa Kỳ là gì?", a: "" },
-  { q: "Nếu Tổng Thống không còn làm việc được nữa, ai sẽ thay thế làm Tổng Thống?", a: "Phó Tổng Thống" },
-  { q: "Nếu cả Tổng Thống và Phó Tổng Thống không còn làm việc được nữa, ai sẽ thay thế?", a: "Chủ Tịch Hạ Nghị Viện" },
-  { q: "Ai là Tổng Tư Lệnh quân đội?", a: "Tổng Thống" },
-  { q: "Ai sẽ ký dự thảo luật thành luật?", a: "Tổng Thống" },
-  { q: "Ai có quyền phủ quyết các dự luật?", a: "Tổng Thống" },
-  { q: "Nội các của Tổng Thống làm gì?", a: "Cố vấn cho Tổng Thống" },
-  { q: "Kể ra Hai chức vụ trong hàng nội các", a: "Phó Tổng Thống và Bộ Trưởng Giáo Dục" },
-  { q: "Ngành tư pháp làm gì?", a: "giải quyết tranh cãi (bất hòa)" },
-  { q: "Tòa án cao nhất ở Hoa Kỳ là gì?", a: "Tối Cao Pháp Viện" },
-  { q: "Có bao nhiêu thẩm phán ở Tối Cao Pháp Viện?", a: "" },
-  { q: "Ai đang là Chủ Tịch Tối Cao Pháp Viện?", a: "" },
-  { q: "Theo Hiến Pháp, chánh phủ liên bang có một số quyền. Một trong các quyền của chánh phủ liên bang là?", a: "in tiền" },
-  { q: "Theo Hiến Pháp, các tiểu bang có một số quyền. Một trong những quyền này là gì? ", a: "cấp bằng lái xe" },
-  { q: "Thống Đốc tiểu bang của bạn tên gì?", a: "" },
-  { q: "Thủ phủ của tiểu bang bạn tên gì?", a: "" },
-  { q: "Hai đảng chính của Hoa Kỳ là gì?", a: "Dân Chủ và Cộng Hòa" },
-  { q: "Đảng của Tổng Thống hiện tại là đảng nào?", a: "" },
-  { q: "Chủ Tịch Hạ Viện hiện thời tên gì?", a: "" },
-  { q: "Có bốn tu chính án Hiến Pháp về việc ai có quyền bầu cử. Kể ra Một trong các thứ đó", a: "Công dân mười tám (18) tuổi và hơn (được đi bầu)." },
-  { q: "Công dân mười tám (18) tuổi và hơn (được đi bầu).", a: "" },
-  { q: "Một trong các bổn phận chỉ dành riêng cho công dân Hoa Kỳ là gì?", a: " đi bầu trong bầu cử liên bang" },
-  { q: "Cho biết một quyền của riêng công dân Hoa Kỳ.", a: "tham gia bầu cử cấp liên bang" },
-  { q: "Cho biết hai quyền của mỗi người sống ở Hoa Kỳ?", a: "tự do ngôn luận và tự do tín ngưỡng" },
-  { q: "Khi nói Lời Tuyên Thệ Trung Thành (Pledge of Allegiance), chúng ta chứng tỏ sự trung thành với cái gì?", a: "Hoa Kỳ" },
-  { q: "Khi trở thành công dân Hoa Kỳ, một trong những lời hứa của bạn là gì?", a: "trung thành với quốc gia Hoa Kỳ" },
-  { q: "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?", a: "Mười Tám (18) và hơn" },
-  { q: "Có hai cách công dân Hoa Kỳ có thể tham dự vào nền dân chủ là các cách nào", a: "bầu cử và tham gia một đảng phái chính trị" },
-  { q: "Ngày cuối cùng có thể nạp mẫu khai thuế cho liên bang là?", a: "15 Tháng Tư" },
-  { q: "Khi nào tất cả nam giới phải ghi tên cho Sở Quân Vụ (Selective Service)?", a: "ở giữa tuổi mười tám (18) và hai mươi sáu (26)" },
-  { q: "Một trong những lý do khiến người di dân thời thuộc địa tới Mỹ Châu là gì?", a: "tự do" },
- 
-   { q: " Những ai sống tại Mỹ trước khi người Âu Châu tới?", a: "người da đỏ Mỹ Châu" },
-  // You can continue adding all 100 Q&A pairs here
-];
-
-let index = 0;
-
-function showCard(i){
-  document.getElementById("question").innerText = cards[i].q;
-  document.getElementById("answer").innerText = cards[i].a;
-
-  // Add question number text
-  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
-  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1);
-
-  document.getElementById("counter").innerText = `Card ${i + 1} of ${cards.length}`;
-  document.querySelector('.card').classList.remove('flip');
-}
-
-function nextCard(){
-  if(index < cards.length - 1){
-    index++;
-    showCard(index);
-  }
-}
-
-function prevCard(){
-  if(index > 0){
-    index--;
-    showCard(index);
-  }
-}
-
-showCard(index);
-</script>
-
-</body>
-</html>
