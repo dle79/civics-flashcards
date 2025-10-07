@@ -14,22 +14,22 @@
     text-align: center;
   }
 
-  /* 🔹 Title style */
+  /* 🔹 Big title */
   h2 {
-    margin-top: 3vh;
-    font-size: 8vw;        /* much bigger on phones */
+    margin-top: 2vh;
+    font-size: 9vw;           /* very large on phones */
     font-weight: bold;
     color: #003366;
   }
 
   p {
-    font-size: 5vw;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
+  /* 🔹 Flashcard container */
   .flashcard {
-    width: 90vw;
-    height: 65vh;
+    width: 95vw;              /* use nearly full width */
+    height: 65vh;             /* take most of the height */
     margin: 4vh auto;
     perspective: 1000px;
   }
@@ -39,82 +39,8 @@
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.6s;
-    cursor: pointer;
-  }
+    transition: transf
 
-  .card.flip {
-    transform: rotateY(180deg);
-  }
-
-  .front, .back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #333;
-    border-radius: 15px;
-    padding: 5vw;
-    box-sizing: border-box;
-  }
-
-  .front {
-    background: #fff;
-    font-size: 5vw;
-    font-weight: bold;
-  }
-
-  .back {
-    background: #e0f7fa;
-    font-size: 6vw;   /* Larger Vietnamese text */
-    font-weight: bold;
-    transform: rotateY(180deg);
-  }
-
-  .question-number {
-    position: absolute;
-    top: 2vh;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 4.5vw;
-    font-weight: bold;
-    color: #444;
-  }
-
-  button {
-    margin: 1vh;
-    padding: 2vh 4vw;
-    border: none;
-    background: #0077cc;
-    color: #fff;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 4.5vw;
-  }
-
-  button:hover {
-    background: #005fa3;
-  }
-
-  #counter {
-    font-size: 4vw;
-    margin-top: 1vh;
-  }
-
-  /* 🖥 Desktop adjustments */
-  @media (min-width: 768px) {
-    h2 { font-size: 40px; }
-    .front { font-size: 20px; }
-    .back { font-size: 23px; }
-    .question-number { font-size: 18px; }
-    button { font-size: 18px; padding: 12px 25px; }
-    #counter { font-size: 18px; }
-  }
-</style>
 
 
 </head>
