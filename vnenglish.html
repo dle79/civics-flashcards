@@ -178,9 +178,10 @@
 </div>
 
 <div class="button-container">
-  <button onclick="prevCard()">⬅️ Trước</button>
-  <button onclick="nextCard()">Tiếp ➡️</button>
+  <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
+  <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
 </div>
+
 
 <script>
 const cards = [
@@ -213,17 +214,36 @@ const cards = [
 let index = 0;
 
 function showCard(i){
-  //document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
-  //document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1);
-  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
-  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("question").innerHTML = cards[i].q;
+  document.getElementById("answer").innerHTML = cards[i].a;
 
-  document.getElementById("question-vn").innerHTML = cards[i].q_vn;
-  document.getElementById("question-en").innerHTML = cards[i].q_en;
-  document.getElementById("answer-vn").innerHTML   = cards[i].a_vn;
-  document.getElementById("answer-en").innerHTML   = cards[i].a_en;
+  // Update the question number text
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("qnum-back").innerText  = "Câu hỏi " + (i + 1) + " / " + cards.length;
+
+  // Update bottom counter
+  document.getElementById("counter").innerText = "Thẻ " + (i + 1) + " / " + cards.length;
+
+  // Reset flip state
   document.querySelector('.card').classList.remove('flip');
+
+  // 🔹 Hide or show navigation buttons
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  if (i === 0) {
+    prevBtn.style.visibility = "hidden";   // hide "Trước" on first card
+  } else {
+    prevBtn.style.visibility = "visible";
+  }
+
+  if (i === cards.length - 1) {
+    nextBtn.style.visibility = "hidden";   // hide "Tiếp" on last card
+  } else {
+    nextBtn.style.visibility = "visible";
+  }
 }
+
 
 function nextCard(){
   if(index < cards.length - 1){ index++; showCard(index); }
