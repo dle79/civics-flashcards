@@ -6,6 +6,24 @@
 
 <title>100 Civics Flashcards</title>
 <style>
+  /* 🔹 Disable Safari double-tap and focus zoom */
+html, body {
+  touch-action: manipulation;      /* stops double-tap zoom */
+  -webkit-touch-callout: none;     /* prevents text menu on long press */
+}
+
+button, input {
+  font-size: 16px !important;      /* iOS needs at least 16px to prevent zoom */
+  touch-action: manipulation;      /* no double-tap zoom on buttons/inputs */
+  user-select: none;               /* prevents text selection */
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; /* removes gray flash */
+}
+
+* {
+  -webkit-text-size-adjust: 100%;  /* disables auto font resizing on iOS */
+}
+
   input, button, select, textarea {
   font-size: 16px !important; /* prevents Safari zoom on tap */
 }
@@ -203,10 +221,43 @@ button {
   </div>
 </div>
 
-<div class="button-container">
-  <button onclick="prevCard()">⬅️ Trước</button>
-  <button onclick="nextCard()">Tiếp ➡️</button>
+<!-- 🔹 Container for all controls -->
+<div class="button-container"
+     style="display:flex; flex-direction:column; align-items:center; gap:4vh; margin-top:3vh;">
+
+  <!-- 🔢 Go-to-Question Section -->
+  <div class="goto-container"
+       style="display:flex; justify-content:center; align-items:center;
+              gap:3vw; margin-bottom:2vh;">
+    <input type="number" id="gotoInput" min="1" max="100"
+           placeholder="Nhập số câu (1–100)"
+           style="font-size:6vw; padding:1.2vh 2vw; width:40vw; border-radius:12px;
+                  text-align:center; border:2px solid #0077cc;">
+    <button onclick="gotoCard()"
+            style="font-size:6vw; padding:1.2vh 3vw; border:none; border-radius:12px;
+                   background:#0077cc; color:white; font-weight:bold;">
+       Đến câu hỏi
+    </button>
+  </div>
+
+  <!-- ⬅️➡️ Navigation Buttons -->
+  <div class="nav-buttons"
+       style="display:flex; justify-content:center; align-items:center; gap:10vw;">
+    <button id="prevBtn" onclick="prevCard()"
+            style="flex:none; font-size:7vw; padding:2vh 6vw; min-width:35vw;
+                   border:none; border-radius:20px; background:#0077cc;
+                   color:white; font-weight:bold; box-shadow:0 5px 8px rgba(0,0,0,0.25);">
+      ⬅️ Trước
+    </button>
+    <button id="nextBtn" onclick="nextCard()"
+            style="flex:none; font-size:7vw; padding:2vh 6vw; min-width:35vw;
+                   border:none; border-radius:20px; background:#0077cc;
+                   color:white; font-weight:bold; box-shadow:0 5px 8px rgba(0,0,0,0.25);">
+      Tiếp ➡️
+    </button>
+  </div>
 </div>
+
 
 
 <p id="counter"></p>
