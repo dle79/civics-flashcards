@@ -7,6 +7,25 @@
 <title>Vietnamese + English Civics Flashcards</title>
 
 <style>
+
+  /* 🔹 Disable Safari double-tap and focus zoom */
+html, body {
+  touch-action: manipulation;      /* stops double-tap zoom */
+  -webkit-touch-callout: none;     /* prevents text menu on long press */
+}
+
+button, input {
+  font-size: 16px !important;      /* iOS needs at least 16px to prevent zoom */
+  touch-action: manipulation;      /* no double-tap zoom on buttons/inputs */
+  user-select: none;               /* prevents text selection */
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent; /* removes gray flash */
+}
+
+* {
+  -webkit-text-size-adjust: 100%;  /* disables auto font resizing on iOS */
+}
+
   input, button, select, textarea {
   font-size: 16px !important; /* prevents Safari zoom on tap */
 }
@@ -860,13 +879,13 @@ function showCard(i){
   const nextBtn = document.getElementById("nextBtn");
 
   if (i === 0) {
-    prevBtn.style.visibility = "hidden";   // hide "Trước" on first card
+    prevBtn.style.visibility = "none";   // hide "Trước" on first card
   } else {
     prevBtn.style.visibility = "visible";
   }
 
   if (i === cards.length - 1) {
-    nextBtn.style.visibility = "hidden";   // hide "Tiếp" on last card
+    nextBtn.style.visibility = "";   // hide "Tiếp" on last card
   } else {
     nextBtn.style.visibility = "visible";
   }
