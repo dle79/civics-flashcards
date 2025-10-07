@@ -2,10 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 
 <title>100 Civics Flashcards</title>
 <style>
+  input, button, select, textarea {
+  font-size: 16px !important; /* prevents Safari zoom on tap */
+}
+
+body {
+  touch-action: manipulation; /* prevents double-tap zoom */
+}
+
+* {
+  -webkit-tap-highlight-color: transparent; /* removes flash highlight */
+}
+button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
   html {
       -webkit-text-size-adjust: 100%;
     }
