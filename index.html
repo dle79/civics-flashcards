@@ -18,7 +18,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 2vh;
-    font-size: 13vw;              /* very large title */
+    font-size: 13vw;              /* large title on phones */
     font-weight: bold;
     color: #003366;
   }
@@ -30,8 +30,8 @@
 
   /* 🔹 Flashcard container */
   .flashcard {
-    width: 96vw;
-    height: 75vh;                 /* taller for larger text */
+    width: 94vw;
+    height: 55vh;                 /* ⬇ shorter card so buttons fit */
     margin: 2vh auto;
     perspective: 1000px;
   }
@@ -49,7 +49,7 @@
     transform: rotateY(180deg);
   }
 
-  /* 🔹 Both sides of card */
+  /* 🔹 Card faces */
   .front, .back {
     position: absolute;
     width: 100%;
@@ -61,24 +61,24 @@
     justify-content: center;
     border: 5px solid #333;
     border-radius: 30px;
-    padding: 8vw;
+    padding: 6vw;
     box-sizing: border-box;
     text-align: center;
   }
 
-  /* 🔹 Question (front) */
+  /* 🔹 Question side */
   .front {
     background: #ffffff;
-    font-size: 11vw;              /* ⬆️ bigger question text */
+    font-size: 9.5vw;             /* big question text */
     line-height: 1.4;
     font-weight: bold;
   }
 
-  /* 🔹 Answer (back) */
+  /* 🔹 Answer side */
   .back {
     background: #e0f7fa;
-    font-size: 12vw;              /* ⬆️ bigger Vietnamese text */
-    line-height: 1.5;
+    font-size: 10.5vw;            /* slightly bigger answer */
+    line-height: 1.4;
     font-weight: bold;
     transform: rotateY(180deg);
   }
@@ -86,7 +86,7 @@
   /* 🔹 Question number */
   .question-number {
     position: absolute;
-    top: 1.5vh;
+    top: 1.2vh;
     left: 50%;
     transform: translateX(-50%);
     font-size: 8vw;
@@ -95,18 +95,26 @@
     text-shadow: 1px 1px 2px #ccc;
   }
 
-  /* 🔹 Buttons */
+  /* 🔹 Buttons (large & always visible) */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 6vw;
+    margin-top: 1vh;
+  }
+
   button {
-    margin: 1vh;
-    padding: 3vh 10vw;
+    flex: 1;
+    padding: 3vh 0;
     border: none;
     background: #0077cc;
     color: #fff;
     border-radius: 16px;
     cursor: pointer;
-    font-size: 8.5vw;             /* ⬆️ larger button text */
+    font-size: 9vw;               /* ⬆ bigger text */
     font-weight: bold;
     box-shadow: 0 6px 8px rgba(0,0,0,0.25);
+    max-width: 40vw;              /* keep nice shape side-by-side */
   }
 
   button:hover {
@@ -132,13 +140,16 @@
   /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
     h2 { font-size: 60px; }
-    .front { font-size: 38px; }
-    .back { font-size: 42px; }
-    .question-number { font-size: 28px; }
-    button { font-size: 28px; padding: 18px 45px; }
+    .flashcard { height: 50vh; }
+    .front { font-size: 30px; }
+    .back { font-size: 34px; }
+    .question-number { font-size: 26px; }
+    .button-container { gap: 2vw; }
+    button { font-size: 28px; padding: 18px 0; max-width: 200px; }
     #counter { font-size: 22px; }
   }
 </style>
+
 
 
 
@@ -161,8 +172,11 @@
   </div>
 </div>
 
-<button onclick="prevCard()">⬅️ Trở lại câu hỏi trước</button>
-<button onclick="nextCard()">Đi tiếp ➡️</button>
+<div class="button-container">
+  <button onclick="prevCard()">⬅️ Trước</button>
+  <button onclick="nextCard()">Tiếp ➡️</button>
+</div>
+
 
 <p id="counter"></p>
 
