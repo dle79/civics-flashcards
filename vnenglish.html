@@ -201,30 +201,606 @@ button {
 <script>
 const cards = [
   {
-    q_vn: "Luật <span class='highlight'>cao nhất</span> của quốc gia là gì?",
-    q_en: "What is the <span class='highlight'>supreme law</span> of the land?",
-    a_vn: "Hiến Pháp",
-    a_en: "The Constitution"
+    "q_vn": "Luật cao nhất của quốc gia là gì?",
+    "q_en": "What is the supreme law of the land?",
+    "a_vn": "Hiến Pháp",
+    "a_en": "The Constitution"
   },
   {
-    q_vn: "Hiến Pháp có mục đích gì?",
-    q_en: "What does the Constitution do?",
-    a_vn: "Thiết lập chính phủ",
-    a_en: "Sets up the government"
+    "q_vn": "Hiến Pháp làm gì?",
+    "q_en": "What does the Constitution do?",
+    "a_vn": "Thiết lập chính phủ",
+    "a_en": "Sets up the government"
   },
   {
-    q_vn: "Tu chính án là gì?",
-    q_en: "What is an amendment?",
-    a_vn: "Một sự thay đổi (trong Hiến Pháp)",
-    a_en: "A change to the Constitution"
+    "q_vn": "Ba chữ đầu tiên của Hiến Pháp là gì?",
+    "q_en": "The idea of self‑government is in the first three words of the Constitution. What are these words?",
+    "a_vn": "Chúng ta là nhân dân",
+    "a_en": "We the People"
   },
   {
-    q_vn: "Ta gọi mười tu chính đầu tiên vào Hiến Pháp là gì?",
-    q_en: "What do we call the first ten amendments to the Constitution?",
-    a_vn: "Luật Dân Quyền",
-    a_en: "The Bill of Rights"
+    "q_vn": "Tu chính án là gì?",
+    "q_en": "What is an amendment?",
+    "a_vn": "Một sự thay đổi Hiến Pháp",
+    "a_en": "A change to the Constitution"
+  },
+  {
+    "q_vn": "Mười tu chính án đầu gọi là gì?",
+    "q_en": "What do we call the first ten amendments to the Constitution?",
+    "a_vn": "Tuyên ngôn Nhân quyền",
+    "a_en": "The Bill of Rights"
+  },
+  {
+    "q_vn": "Kể một quyền trong Tu chính án thứ nhất.",
+    "q_en": "What is one right or freedom from the First Amendment?",
+    "a_vn": "Tự do ngôn luận",
+    "a_en": "Speech"
+  },
+  {
+    "q_vn": "Hiến Pháp có bao nhiêu tu chính án?",
+    "q_en": "How many amendments does the Constitution have?",
+    "a_vn": "27",
+    "a_en": "27"
+  },
+  {
+    "q_vn": "Tuyên ngôn Độc lập làm gì?",
+    "q_en": "What did the Declaration of Independence do?",
+    "a_vn": "Tuyên bố độc lập khỏi Anh",
+    "a_en": "Declared our independence (from Great Britain)"
+  },
+  {
+    "q_vn": "Kể hai quyền trong Tuyên ngôn Độc lập.",
+    "q_en": "What are two rights in the Declaration of Independence?",
+    "a_vn": "Quyền sống và tự do",
+    "a_en": "Life and liberty"
+  },
+  {
+    "q_vn": "Tự do tôn giáo là gì?",
+    "q_en": "What is freedom of religion?",
+    "a_vn": "Theo hoặc không theo tôn giáo nào cũng được",
+    "a_en": "You can practice any religion, or not practice a religion."
+  },
+  {
+    "q_vn": "Hệ thống kinh tế của Hoa Kỳ là gì?",
+    "q_en": "What is the economic system in the United States?",
+    "a_vn": "Kinh tế tư bản",
+    "a_en": "Capitalist economy"
+  },
+  {
+    "q_vn": "“Thượng tôn pháp luật” nghĩa là gì?",
+    "q_en": "What is the rule of law?",
+    "a_vn": "Mọi người phải tuân luật",
+    "a_en": "Everyone must follow the law"
+  },
+  {
+    "q_vn": "Kể một nhánh của chính quyền.",
+    "q_en": "Name one branch or part of the government.",
+    "a_vn": "Hành pháp",
+    "a_en": "Executive"
+  },
+  {
+    "q_vn": "Điều gì ngăn một nhánh chính quyền quá mạnh?",
+    "q_en": "What stops one branch of government from becoming too powerful?",
+    "a_vn": "Kiểm soát và cân bằng",
+    "a_en": "Checks and balances"
+  },
+  {
+    "q_vn": "Ai đứng đầu ngành hành pháp?",
+    "q_en": "Who is in charge of the executive branch?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Ai làm luật liên bang?",
+    "q_en": "Who makes federal laws?",
+    "a_vn": "Quốc Hội",
+    "a_en": "Congress"
+  },
+  {
+    "q_vn": "Hai phần của Quốc Hội là gì?",
+    "q_en": "What are the two parts of the U.S. Congress?",
+    "a_vn": "Thượng viện và Hạ viện",
+    "a_en": "The Senate and House of Representatives"
+  },
+  {
+    "q_vn": "Có bao nhiêu Thượng nghị sĩ?",
+    "q_en": "How many U.S. Senators are there?",
+    "a_vn": "100",
+    "a_en": "100"
+  },
+  {
+    "q_vn": "Chúng ta bầu Thượng nghị sĩ cho bao nhiêu năm?",
+    "q_en": "We elect a U.S. Senator for how many years?",
+    "a_vn": "6 năm",
+    "a_en": "6"
+  },
+  {
+    "q_vn": "Nêu một trong các Thượng nghị sĩ của tiểu bang bạn.",
+    "q_en": "Who is one of your state’s U.S. Senators now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Hạ viện có bao nhiêu dân biểu?",
+    "q_en": "The House of Representatives has how many voting members?",
+    "a_vn": "435",
+    "a_en": "435"
+  },
+  {
+    "q_vn": "Chúng ta bầu dân biểu cho mấy năm?",
+    "q_en": "We elect a U.S. Representative for how many years?",
+    "a_vn": "2 năm",
+    "a_en": "2"
+  },
+  {
+    "q_vn": "Tên dân biểu của bạn là ai?",
+    "q_en": "Name your U.S. Representative.",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Thượng nghị sĩ đại diện cho ai?",
+    "q_en": "Who does a U.S. Senator represent?",
+    "a_vn": "Tất cả người dân trong tiểu bang",
+    "a_en": "All people of the state"
+  },
+  {
+    "q_vn": "Tại sao một số tiểu bang có nhiều dân biểu hơn?",
+    "q_en": "Why do some states have more Representatives than other states?",
+    "a_vn": "Vì đông dân hơn",
+    "a_en": "Because of the state’s population"
+  },
+  {
+    "q_vn": "Nhiệm kỳ Tổng Thống là mấy năm?",
+    "q_en": "We elect a President for how many years?",
+    "a_vn": "4 năm",
+    "a_en": "4"
+  },
+  {
+    "q_vn": "Bầu Tổng Thống vào tháng nào?",
+    "q_en": "In what month do we vote for President?",
+    "a_vn": "Tháng Mười Một",
+    "a_en": "November"
+  },
+  {
+    "q_vn": "Hiện nay Tổng Thống là ai?",
+    "q_en": "What is the name of the President of the United States now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Hiện nay Phó Tổng Thống là ai?",
+    "q_en": "What is the name of the Vice President of the United States now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Ai trở thành Tổng Thống nếu Tổng Thống không còn làm việc?",
+    "q_en": "If the President can no longer serve, who becomes President?",
+    "a_vn": "Phó Tổng Thống",
+    "a_en": "The Vice President"
+  },
+  {
+    "q_vn": "Ai trở thành Tổng Thống nếu cả Tổng Thống và Phó TT không còn làm việc?",
+    "q_en": "If both the President and the Vice President can no longer serve, who becomes President?",
+    "a_vn": "Chủ tịch Hạ viện",
+    "a_en": "The Speaker of the House"
+  },
+  {
+    "q_vn": "Ai là Tổng tư lệnh quân đội?",
+    "q_en": "Who is the Commander in Chief of the military?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Ai ký dự luật thành luật?",
+    "q_en": "Who signs bills to become laws?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Ai có quyền phủ quyết dự luật?",
+    "q_en": "Who vetoes bills?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Nội các Tổng Thống làm gì?",
+    "q_en": "What does the President’s Cabinet do?",
+    "a_vn": "Cố vấn cho Tổng Thống",
+    "a_en": "Advises the President"
+  },
+  {
+    "q_vn": "Kể hai chức vụ nội các.",
+    "q_en": "What are two Cabinet-level positions?",
+    "a_vn": "Ngoại trưởng và Bộ trưởng Quốc phòng",
+    "a_en": "Secretary of State and Secretary of Defense"
+  },
+  {
+    "q_vn": "Ngành tư pháp làm gì?",
+    "q_en": "What does the judicial branch do?",
+    "a_vn": "Giải thích luật",
+    "a_en": "Reviews laws"
+  },
+  {
+    "q_vn": "Tòa án cao nhất là gì?",
+    "q_en": "What is the highest court in the United States?",
+    "a_vn": "Tối Cao Pháp Viện",
+    "a_en": "The Supreme Court"
+  },
+  {
+    "q_vn": "Tối Cao Pháp Viện có bao nhiêu thẩm phán?",
+    "q_en": "How many justices are on the Supreme Court?",
+    "a_vn": "9",
+    "a_en": "9"
+  },
+  {
+    "q_vn": "Ai là Chủ tịch Tối Cao Pháp Viện?",
+    "q_en": "Who is the Chief Justice of the United States now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Theo Hiến Pháp, chính phủ liên bang có một số quyền. Một quyền là gì?",
+    "q_en": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
+    "a_vn": "In tiền",
+    "a_en": "To print money"
+  },
+  {
+    "q_vn": "Theo Hiến Pháp, tiểu bang có một số quyền. Một quyền là gì?",
+    "q_en": "Under our Constitution, some powers belong to the states. What is one power of the states?",
+    "a_vn": "Cấp bằng lái xe",
+    "a_en": "Provide driver's licenses"
+  },
+  {
+    "q_vn": "Thống đốc tiểu bang bạn tên gì?",
+    "q_en": "Who is the Governor of your state now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Thủ phủ của tiểu bang bạn tên gì?",
+    "q_en": "What is the capital of your state?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Hai đảng chính của Hoa Kỳ là gì?",
+    "q_en": "What are the two major political parties in the United States?",
+    "a_vn": "Dân Chủ và Cộng Hòa",
+    "a_en": "Democratic and Republican"
+  },
+  {
+    "q_vn": "Đảng của Tổng Thống hiện tại là gì?",
+    "q_en": "What is the political party of the President now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Chủ tịch Hạ viện hiện nay là ai?",
+    "q_en": "What is the name of the Speaker of the House of Representatives now?",
+    "a_vn": "(câu trả lời thay đổi)",
+    "a_en": "(answers will vary)"
+  },
+  {
+    "q_vn": "Kể một trong bốn tu chính án nói về quyền bầu cử.",
+    "q_en": "There are four amendments to the Constitution about who can vote. Describe one of them.",
+    "a_vn": "Công dân 18 tuổi trở lên được bầu",
+    "a_en": "Citizens eighteen (18) and older can vote"
+  },
+  {
+    "q_vn": "Một bổn phận chỉ dành cho công dân Hoa Kỳ là gì?",
+    "q_en": "What is one responsibility that is only for United States citizens?",
+    "a_vn": "Bồi thẩm đoàn",
+    "a_en": "Serve on a jury"
+  },
+  {
+    "q_vn": "Kể một quyền của công dân Hoa Kỳ.",
+    "q_en": "Name one right only for United States citizens.",
+    "a_vn": "Bỏ phiếu liên bang",
+    "a_en": "Vote in a federal election"
+  },
+  {
+    "q_vn": "Kể hai quyền của mọi người sống ở Hoa Kỳ.",
+    "q_en": "What are two rights of everyone living in the United States?",
+    "a_vn": "Tự do ngôn luận và tín ngưỡng",
+    "a_en": "Freedom of speech and freedom of religion"
+  },
+  {
+    "q_vn": "Khi nói Lời Tuyên Thệ Trung Thành, chúng ta trung thành với ai/cái gì?",
+    "q_en": "What do we show loyalty to when we say the Pledge of Allegiance?",
+    "a_vn": "Hoa Kỳ",
+    "a_en": "The United States"
+  },
+  {
+    "q_vn": "Một lời hứa khi trở thành công dân Hoa Kỳ là gì?",
+    "q_en": "What is one promise you make when you become a United States citizen?",
+    "a_vn": "Trung thành với Hoa Kỳ",
+    "a_en": "Be loyal to the United States"
+  },
+  {
+    "q_vn": "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?",
+    "q_en": "How old do citizens have to be to vote for President?",
+    "a_vn": "18 tuổi",
+    "a_en": "18 and older"
+  },
+  {
+    "q_vn": "Kể hai cách công dân có thể tham gia nền dân chủ.",
+    "q_en": "What are two ways that Americans can participate in their democracy?",
+    "a_vn": "Bỏ phiếu và tranh cử",
+    "a_en": "Vote and run for office"
+  },
+  {
+    "q_vn": "Ngày cuối cùng nộp thuế liên bang là ngày nào?",
+    "q_en": "When is the last day you can send in federal income tax forms?",
+    "a_vn": "15 Tháng Tư",
+    "a_en": "April 15"
+  },
+  {
+    "q_vn": "Khi nào nam giới phải ghi danh Sở Quân vụ?",
+    "q_en": "When must all men register for the Selective Service?",
+    "a_vn": "Tuổi 18",
+    "a_en": "At age eighteen (18)"
+  },
+  {
+    "q_vn": "Một lý do người di dân thời thuộc địa đến Mỹ Châu là gì?",
+    "q_en": "What is one reason colonists came to America?",
+    "a_vn": "Tự do",
+    "a_en": "Freedom"
+  },
+  {
+    "q_vn": "Ai sống ở Mỹ trước khi người châu Âu tới?",
+    "q_en": "Who lived in America before the Europeans arrived?",
+    "a_vn": "Người Da đỏ Mỹ",
+    "a_en": "American Indians"
+  },
+  {
+    "q_vn": "Nhóm người nào bị đưa đến Mỹ và bán làm nô lệ?",
+    "q_en": "What group of people was taken to America and sold as slaves?",
+    "a_vn": "Người châu Phi",
+    "a_en": "Africans"
+  },
+  {
+    "q_vn": "Tại sao người thực dân đánh nhau với người Anh?",
+    "q_en": "Why did the colonists fight the British?",
+    "a_vn": "Thuế má cao/không có đại diện",
+    "a_en": "Because of high taxes (taxation without representation)"
+  },
+  {
+    "q_vn": "Ai viết Tuyên ngôn Độc lập?",
+    "q_en": "Who wrote the Declaration of Independence?",
+    "a_vn": "Thomas Jefferson",
+    "a_en": "Thomas Jefferson"
+  },
+  {
+    "q_vn": "Tuyên ngôn Độc lập được thông qua ngày nào?",
+    "q_en": "When was the Declaration of Independence adopted?",
+    "a_vn": "Ngày 4 Tháng 7, 1776",
+    "a_en": "July 4, 1776"
+  },
+  {
+    "q_vn": "13 bang ban đầu gọi là gì? Kể ba bang.",
+    "q_en": "There were 13 original states. Name three.",
+    "a_vn": "New York, New Jersey, Pennsylvania",
+    "a_en": "New York, New Jersey, Pennsylvania"
+  },
+  {
+    "q_vn": "Hội nghị Lập hiến làm gì?",
+    "q_en": "What happened at the Constitutional Convention?",
+    "a_vn": "Soạn Hiến Pháp",
+    "a_en": "The Constitution was written"
+  },
+  {
+    "q_vn": "Hiến Pháp được viết năm nào?",
+    "q_en": "When was the Constitution written?",
+    "a_vn": "1787",
+    "a_en": "1787"
+  },
+  {
+    "q_vn": "Ai được gọi là Cha đẻ của Hiến Pháp?",
+    "q_en": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+    "a_vn": "James Madison",
+    "a_en": "James Madison"
+  },
+  {
+    "q_vn": "Benjamin Franklin nổi tiếng về điều gì?",
+    "q_en": "What is one thing Benjamin Franklin is famous for?",
+    "a_vn": "Nhà ngoại giao Hoa Kỳ",
+    "a_en": "U.S. diplomat"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống đầu tiên?",
+    "q_en": "Who was the first President?",
+    "a_vn": "George Washington",
+    "a_en": "George Washington"
+  },
+  {
+    "q_vn": "Chiến tranh nào do Hoa Kỳ tham gia trong thế kỷ 1800? Kể một.",
+    "q_en": "Name one war fought by the United States in the 1800s.",
+    "a_vn": "Nội chiến",
+    "a_en": "The Civil War"
+  },
+  {
+    "q_vn": "Tên gọi khác của Nội chiến là gì?",
+    "q_en": "Name the U.S. war between the North and the South.",
+    "a_vn": "Nội chiến",
+    "a_en": "The Civil War"
+  },
+  {
+    "q_vn": "Một vấn đề dẫn đến Nội chiến là gì?",
+    "q_en": "Name one problem that led to the Civil War.",
+    "a_vn": "Chế độ nô lệ",
+    "a_en": "Slavery"
+  },
+  {
+    "q_vn": "Một điều quan trọng mà Abraham Lincoln làm là gì?",
+    "q_en": "What was one important thing that Abraham Lincoln did?",
+    "a_vn": "Giải phóng nô lệ",
+    "a_en": "Freed the slaves"
+  },
+  {
+    "q_vn": "Tuyên ngôn Giải phóng làm gì?",
+    "q_en": "What did the Emancipation Proclamation do?",
+    "a_vn": "Giải phóng nô lệ",
+    "a_en": "Freed the slaves"
+  },
+  {
+    "q_vn": "Susan B. Anthony đã làm gì?",
+    "q_en": "What did Susan B. Anthony do?",
+    "a_vn": "Đấu tranh cho quyền phụ nữ",
+    "a_en": "Fought for women’s rights"
+  },
+  {
+    "q_vn": "Kể một cuộc chiến Hoa Kỳ tham gia trong thế kỷ 1900.",
+    "q_en": "Name one war fought by the United States in the 1900s.",
+    "a_vn": "Thế chiến II",
+    "a_en": "World War II"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống trong Thế chiến I?",
+    "q_en": "Who was President during World War I?",
+    "a_vn": "Woodrow Wilson",
+    "a_en": "Woodrow Wilson"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống trong Thế chiến II?",
+    "q_en": "Who was President during World War II?",
+    "a_vn": "Franklin Roosevelt",
+    "a_en": "Franklin D. Roosevelt"
+  },
+  {
+    "q_vn": "Trong Thế chiến II, Hoa Kỳ chiến đấu chống ai?",
+    "q_en": "Who did the United States fight in World War II?",
+    "a_vn": "Nhật, Đức, Ý",
+    "a_en": "Japan, Germany, and Italy"
+  },
+  {
+    "q_vn": "Trước khi làm Tổng Thống, Eisenhower là tướng trong cuộc chiến nào?",
+    "q_en": "Before he was President, Eisenhower was a general. What war was he in?",
+    "a_vn": "Thế chiến II",
+    "a_en": "World War II"
+  },
+  {
+    "q_vn": "Chiến tranh Lạnh là gì?",
+    "q_en": "During the Cold War, what was the main concern of the United States?",
+    "a_vn": "Chủ nghĩa cộng sản",
+    "a_en": "Communism"
+  },
+  {
+    "q_vn": "Phong trào nào cố gắng chấm dứt phân biệt chủng tộc?",
+    "q_en": "What movement tried to end racial discrimination?",
+    "a_vn": "Phong trào Dân quyền",
+    "a_en": "Civil Rights movement"
+  },
+  {
+    "q_vn": "Martin Luther King, Jr. đã làm gì?",
+    "q_en": "What did Martin Luther King, Jr. do?",
+    "a_vn": "Đấu tranh cho quyền bình đẳng",
+    "a_en": "Fought for civil rights"
+  },
+  {
+    "q_vn": "Sự kiện lớn nào xảy ra vào ngày 11/9/2001 tại Hoa Kỳ?",
+    "q_en": "What major event happened on September 11, 2001, in the United States?",
+    "a_vn": "Khủng bố tấn công Hoa Kỳ",
+    "a_en": "Terrorists attacked the United States"
+  },
+  {
+    "q_vn": "Kể một bộ tộc Da đỏ ở Hoa Kỳ.",
+    "q_en": "Name one American Indian tribe in the United States.",
+    "a_vn": "Cherokee",
+    "a_en": "Cherokee"
+  },
+  {
+    "q_vn": "Kể một trong hai dòng sông dài nhất ở Hoa Kỳ.",
+    "q_en": "Name one of the two longest rivers in the United States.",
+    "a_vn": "Mississippi",
+    "a_en": "Mississippi River"
+  },
+  {
+    "q_vn": "Bờ biển phía tây Hoa Kỳ giáp đại dương nào?",
+    "q_en": "What ocean is on the West Coast of the United States?",
+    "a_vn": "Thái Bình Dương",
+    "a_en": "Pacific Ocean"
+  },
+  {
+    "q_vn": "Bờ biển phía đông Hoa Kỳ giáp đại dương nào?",
+    "q_en": "What ocean is on the East Coast of the United States?",
+    "a_vn": "Đại Tây Dương",
+    "a_en": "Atlantic Ocean"
+  },
+  {
+    "q_vn": "Kể một lãnh thổ của Hoa Kỳ.",
+    "q_en": "Name one U.S. territory.",
+    "a_vn": "Puerto Rico",
+    "a_en": "Puerto Rico"
+  },
+  {
+    "q_vn": "Kể một tiểu bang giáp Canada.",
+    "q_en": "Name one state that borders Canada.",
+    "a_vn": "New York",
+    "a_en": "New York"
+  },
+  {
+    "q_vn": "Kể một tiểu bang giáp Mexico.",
+    "q_en": "Name one state that borders Mexico.",
+    "a_vn": "California",
+    "a_en": "California"
+  },
+  {
+    "q_vn": "Thủ đô Hoa Kỳ là gì?",
+    "q_en": "What is the capital of the United States?",
+    "a_vn": "Washington, DC",
+    "a_en": "Washington, D.C."
+  },
+  {
+    "q_vn": "Tượng Nữ Thần Tự Do ở đâu?",
+    "q_en": "Where is the Statue of Liberty?",
+    "a_vn": "New York (Cảng New York)",
+    "a_en": "New York Harbor"
+  },
+  {
+    "q_vn": "Vì sao có 13 sọc trên quốc kỳ?",
+    "q_en": "Why does the flag have 13 stripes?",
+    "a_vn": "Đại diện 13 bang ban đầu",
+    "a_en": "Because there were 13 original colonies"
+  },
+  {
+    "q_vn": "Vì sao có 50 ngôi sao trên quốc kỳ?",
+    "q_en": "Why does the flag have 50 stars?",
+    "a_vn": "Mỗi ngôi sao đại diện một bang",
+    "a_en": "Because there are 50 states"
+  },
+  {
+    "q_vn": "Quốc ca Hoa Kỳ tên gì?",
+    "q_en": "What is the name of the national anthem?",
+    "a_vn": "The Star-Spangled Banner",
+    "a_en": "The Star-Spangled Banner"
+  },
+  {
+    "q_vn": "Ngày Lễ Độc lập là khi nào?",
+    "q_en": "When do we celebrate Independence Day?",
+    "a_vn": "Ngày 4 Tháng 7",
+    "a_en": "July 4"
+  },
+  {
+    "q_vn": "Kể hai ngày lễ liên bang của Hoa Kỳ.",
+    "q_en": "Name two national U.S. holidays.",
+    "a_vn": "Tết Dương lịch và Lễ Tạ Ơn",
+    "a_en": "New Year’s Day and Thanksgiving"
+  },
+  {
+    "q_vn": "Ai được gọi là 'Cha của Nước Mỹ'?",
+    "q_en": "Who is the 'Father of our Country'?",
+    "a_vn": "George Washington",
+    "a_en": "George Washington"
+  },
+  {
+    "q_vn": "Năm 1803, Hoa Kỳ mua lãnh thổ nào từ Pháp?",
+    "q_en": "What territory did the United States buy from France in 1803?",
+    "a_vn": "Lãnh thổ Louisiana",
+    "a_en": "The Louisiana Territory"
   }
-];
+]
 
 let index = 0;
 
