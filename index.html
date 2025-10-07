@@ -18,7 +18,7 @@
   /* 🔹 Title */
   h2 {
     margin-top: 1vh;
-    font-size: 15vw;              /* very large title */
+    font-size: 16vw;               /* massive title */
     font-weight: bold;
     color: #003366;
   }
@@ -31,8 +31,8 @@
   /* 🔹 Flashcard container */
   .flashcard {
     width: 96vw;
-    height: 45vh;                 /* keeps buttons visible */
-    margin: 2vh auto 8vh auto;    /* ⬇ adds more space below the card */
+    height: 45vh;                  /* short enough for buttons */
+    margin: 2vh auto 10vh auto;    /* add large bottom spacing */
     perspective: 1000px;
   }
 
@@ -69,7 +69,7 @@
   /* 🔹 Question side */
   .front {
     background: #ffffff;
-    font-size: 22vw;              /* super large question */
+    font-size: 22vw;               /* very large question text */
     line-height: 1.2;
     font-weight: bold;
   }
@@ -77,7 +77,7 @@
   /* 🔹 Answer side */
   .back {
     background: #e0f7fa;
-    font-size: 24vw;              /* super large answer */
+    font-size: 24vw;               /* very large Vietnamese answer */
     line-height: 1.2;
     font-weight: bold;
     transform: rotateY(180deg);
@@ -89,37 +89,37 @@
     top: 1vh;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 10vw;
+    font-size: 20vw;               /* ⬆⬆ doubled size */
     font-weight: bold;
     color: #222;
-    text-shadow: 1px 1px 2px #ccc;
+    text-shadow: 2px 2px 3px #ccc;
   }
 
   /* 🔹 Buttons container */
   .button-container {
     position: fixed;
-    bottom: 3vh;                   /* ⬇ move buttons farther down */
+    bottom: 2vh;                   /* place lower near bottom edge */
     left: 0;
     right: 0;
     display: flex;
     justify-content: center;
-    gap: 10vw;                     /* more spacing between buttons */
+    gap: 12vw;                     /* space between buttons */
     z-index: 10;
   }
 
   /* 🔹 Buttons */
   button {
     flex: 1;
-    padding: 5vh 0;                /* ⬆️ double height padding */
+    padding: 6vh 0;                /* ⬆ bigger height */
     border: none;
     background: #0077cc;
     color: #fff;
-    border-radius: 24px;
+    border-radius: 28px;
     cursor: pointer;
-    font-size: 20vw;               /* ⬆️ double button text size */
+    font-size: 22vw;               /* ⬆⬆ doubled text size */
     font-weight: bold;
     box-shadow: 0 8px 12px rgba(0,0,0,0.3);
-    max-width: 45vw;
+    max-width: 46vw;
   }
 
   button:hover {
@@ -144,17 +144,16 @@
 
   /* 🖥 Desktop adjustments */
   @media (min-width: 768px) {
-    h2 { font-size: 70px; }
+    h2 { font-size: 80px; }
     .flashcard { height: 40vh; margin-bottom: 12vh; }
-    .front { font-size: 60px; }
-    .back { font-size: 64px; }
-    .question-number { font-size: 34px; }
+    .front { font-size: 64px; }
+    .back { font-size: 68px; }
+    .question-number { font-size: 42px; }
     .button-container { gap: 4vw; bottom: 3vh; }
-    button { font-size: 60px; padding: 26px 0; max-width: 240px; }
+    button { font-size: 70px; padding: 26px 0; max-width: 260px; }
     #counter { font-size: 26px; }
   }
 </style>
-
 
 </head>
 <body>
@@ -259,7 +258,7 @@ function showCard(i){
   document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1);
   document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1);
 
-  document.getElementById("counter").innerText = `Card ${i + 1} of ${cards.length}`;
+  //document.getElementById("counter").innerText = `Card ${i + 1} of ${cards.length}`;
   document.querySelector('.card').classList.remove('flip');
 }
 
