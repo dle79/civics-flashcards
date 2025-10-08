@@ -240,17 +240,18 @@ function showCard(i) {
   const aElem = document.getElementById("answer");
   const card = cards[i];
 
-  qElem.innerHTML = card.q_vn;
-  if (card.img) {
-    aElem.innerHTML = `${card.a_vn}<br>
-      <img src="${card.img}" alt="Image for ${card.a_vn}"
-           style="margin-top:2vh; max-width:75%; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">`;
-  } else {
-    aElem.innerHTML = card.a_vn;
-  }
+  qElem.innerHTML = card.q;
+if (card.img) {
+  aElem.innerHTML = `${card.a}<br>
+    <img src="${card.img}" alt="Image for ${card.a}"
+         style="margin-top:2vh; max-width:75%; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">`;
+} else {
+  aElem.innerHTML = card.a;
+}
+
 
   document.getElementById("qnum-front").innerText = `Câu hỏi ${i+1} / ${cards.length}`;
-  document.getElementById("qnum-back").innerText  = `Câu hỏi ${i+1} / ${cards.length}`;
+  document.getElementById("qnum-back").innerText  = `Câu trả lời l ${i+1} / ${cards.length}`;
 
   document.querySelector(".card").classList.remove("flip");
   document.getElementById("prevBtn").style.display = i === 0 ? "none" : "inline-block";
