@@ -1,7 +1,12 @@
 [ 
-  {
-    "q": "<span class=\"highlight\">LUẬT CAO NHẤT</span> của quốc gia là gì?",
-    "a": "Hiến Pháp"
+  { "q": "<span class=\"highlight\">LUẬT CAO NHẤT</span> của quốc gia là gì?",
+	"a": "Hiến Pháp" 
+  },    
+  { "q": "<span class=\"highlight\">Hiến Pháp</span> làm gì?", 
+    "a": "Thiết lập chánh phủ" 
+  },  
+  { "q": "<span class=\"highlight\">BA CHỮ ĐẦU TIÊN</span> của Hiến Pháp là gì?", 
+    "a": "Chúng ta là nhân dân" 
   }
   
 ]
