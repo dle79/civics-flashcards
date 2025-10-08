@@ -859,6 +859,17 @@ const cards = [
 ]
 
 let index = 0;
+  // ✅ Load from civics_questions_vi_en.json in same folder
+fetch("civics_questions_vi_en.json")
+  .then(r => r.json())
+  .then(data => {
+    cards = data;
+    showCard(0);
+  })
+  .catch(err => {
+    console.error("❌ Error loading JSON:", err);
+    alert("Không thể tải file câu hỏi. Kiểm tra console để xem lỗi.");
+  });
 
 function showCard(i){
   // 🔹 Update text on front and back (Vietnamese + English)
