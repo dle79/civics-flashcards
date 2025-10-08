@@ -250,21 +250,21 @@ function showCard(i) {
   if (!card) return;
 
   // 🟢 Show question
-  qElem.innerHTML = card.q;
+  qElem.innerHTML = card.q_vn;
 
   // 🟢 Show answer: if image exists, show image left + text right
   if (card.img) {
     aElem.innerHTML = `
       <div style="display:flex; align-items:center; justify-content:center; gap:3vw; width:100%; height:100%;">
         <img src="${card.img}" 
-             alt="Image for ${card.a}"
+             alt="Image for ${card.a_vn}"
              style="max-width:40%; max-height:80%; object-fit:contain; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
-        <div style="flex:1; font-size:inherit; font-weight:inherit; text-align:left;">${card.a}</div>
+        <div style="flex:1; font-size:inherit; font-weight:inherit; text-align:left;">${card.a_vn}</div>
       </div>
     `;
   } else {
     // 🟢 No image — just text
-    aElem.innerHTML = `<div style="padding:2vh;">${card.a}</div>`;
+    aElem.innerHTML = `<div style="padding:2vh;">${card.a_vn}</div>`;
   }
 
   // 🟢 Question number update
