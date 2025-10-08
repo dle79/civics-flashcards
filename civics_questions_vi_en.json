@@ -1,124 +1,613 @@
-[ 
-  { "q": "<span class=\"highlight\">LUẬT CAO NHẤT</span> của quốc gia là gì?",
-	"a": "Hiến Pháp" 
-  },    
-  { "q": "<span class=\"highlight\">Hiến Pháp</span> làm gì?", 
-    "a": "Thiết lập chánh phủ" 
-  },  
-  { "q": "<span class=\"highlight\">BA CHỮ ĐẦU TIÊN</span> của Hiến Pháp là gì?", 
-    "a": "Chúng ta là nhân dân" 
-  }, 
-  { "q": "Tu chính án là gì?", 
-    "a": "một sự thay đổi (trong Hiến Pháp)" 
-  }, 
-  { "q": "<span class=\"highlight\">MƯỜI TU CHÍNH</span> đầu gọi là gì?", 
-    "a": "Luật Dân Quyền" 
-  }, 
-  { "q": "<span class=\"highlight\">KỂ RA MỘT QUYỀN</span> trong Tu Chính Án thứ nhất", 
-    "a": "Tự do ngôn luận" 
-  }, 
-  { "q": "Hiến Pháp có bao nhiêu tu chính án?",
-    "a": "hai mươi bảy (27)" 
-   },
-  { "q": "Bản Tuyên Ngôn Độc Lập làm gì?", 
-    "a": "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" 
+[
+  {
+    "q_vn": "Luật cao nhất của quốc gia là gì?",
+    "q_en": "What is the supreme law of the land?",
+    "a_vn": "Hiến Pháp",
+    "a_en": "The Constitution"
   },
-	{ "q": "Kể ra Hai quyền trong Bản Tuyên Ngôn Độc Lập?",
-		"a": "quyền sống và quyền tự do" 
-	}, 
-  { "q": "Tự do tôn giáo là gì?", 
-	  "a": "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào"
+  {
+    "q_vn": "Hiến Pháp làm gì?",
+    "q_en": "What does the Constitution do?",
+    "a_vn": "Thiết lập chính phủ",
+    "a_en": "Sets up the government"
   },
-  { "q": "Hệ thống kinh tế của Hoa Kỳ là gì?", 
-	  "a": "kinh tế tư bản" 
-  }, 
-  { "q": "“Thượng tôn luật pháp” là gì?", 
-	  "a": "Mọi người đều phải tuân theo luật pháp" 
+  {
+    "q_vn": "Ba chữ đầu tiên của Hiến Pháp là gì?",
+    "q_en": "The idea of self‑government is in the first three words of the Constitution. What are these words?",
+    "a_vn": "Chúng ta là nhân dân",
+    "a_en": "We the People"
   },
-	{ "q": "Kể một nhánh của chính quyền", "a": "Tổng Thống" }, 
-  { "q": "Điều gì ngăn một nhánh chính quyền quá mạnh?", "a": "phân quyền" }, 
-  { "q": "Ai phụ trách hành pháp?", "a": "Tổng Thống" }, 
-  { "q": "Ai làm luật liên bang?", "a": "Quốc Hội" },
-  { "q": "Hai phần của Quốc Hội Hoa Kỳ là gì?", "a": "Thượng và Hạ Nghị Viện" }, 
-  { "q": "Có bao nhiêu Thượng Nghị Sĩ?", "a": "một trăm (100)" }, 
-  { "q": "Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?", "a": "sáu (6)" }, 
-  { "q": "Ai là một trong những Thượng Nghị Sĩ Liên Bang của bạn?", "a": "Joni Ernst", "img": "https://www.iri.org/wp-content/uploads/2018/08/Joni-Ernst-headshot.jpg" },
-  { "q": "Hạ-Nghị-Viện có bao nhiêu dân biểu?", "a": "bốn trăm ba mươi lăm (435)" }, 
-  { "q": "Chúng ta bầu dân biểu cho mấy năm?", "a": "hai năm (2)" }, 
-  { "q": "Cho biết tên dân biểu của bạn.", "a": "Mariannette Miller-Meeks", "img":"https://yaf.org/wp-content/uploads/2024/05/mariannette-miller-meeks.jpeg" }, 
-  { "q": "Thượng-nghị-sĩ đại diện cho ai?", "a": "Tất cả người dân trong tiểu bang" }, 
-  { "q": "Tại sao có những tiểu bang có nhiều đại biểu hơn các tiểu bang khác?", "a": "(Vì) tiểu bang đó đông dân hơn" }, 
-  { "q": "Nhiệm kỳ Tổng Thống là mấy năm?", "a": "Bốn (4) năm" }, { "q": "Bầu Tổng Thống vào tháng nào?", "a": "Tháng Mười Một" }, 
-  { "q": "Hiện nay Tổng Thống Hoa Kỳ là ai?", "a": "Donald Trump","img":"https://trumpwhitehouse.archives.gov/wp-content/uploads/2017/11/President-Trump-Official-Portrait-200x200.jpg" }, 
-  { "q": "Hiện nay Phó Tổng Thống Hoa Kỳ là ai?", "a": "JD Vance","img":"https://www.whitehouse.gov/wp-content/uploads/2025/01/Vice-President-Elect-J.D.-Vance.jpg" }, 
-  { "q": "Nếu Tổng Thống không còn làm việc được nữa, ai sẽ thay thế làm Tổng Thống?", "a": "Phó Tổng Thống" }, 
-  { "q": "Nếu cả Tổng Thống và Phó Tổng Thống không còn làm việc được nữa, ai sẽ thay thế?", "a": "Chủ Tịch Hạ Nghị Viện" }, 
-  { "q": "Ai là Tổng Tư Lệnh quân đội?", "a": "Tổng Thống" }, { "q": "Ai ký dự luật thành luật?", "a": "Tổng Thống" }, 
-  { "q": "Ai có quyền phủ quyết các dự luật?", "a": "Tổng Thống" }, 
-  { "q": "Nội các của Tổng Thống làm gì?", "a": "Cố vấn cho Tổng Thống" }, 
-  { "q": "Kể ra Hai chức vụ trong hàng nội các", "a": "Phó Tổng Thống và Bộ Trưởng Giáo Dục" }, 
-  { "q": "Ngành tư pháp làm gì?", "a": "duyệt lại luật lệ" }, 
-  { "q": "Tòa án cao nhất ở Hoa Kỳ là gì?", "a": "Tối Cao Pháp Viện" }, 
-  { "q": "Có bao nhiêu thẩm phán ở Tối Cao Pháp Viện?", "a": "9" }, 
-  { "q": "Ai đang là Chủ Tịch Tối Cao Pháp Viện?", "a": "John Roberts","img":"https://upload.wikimedia.org/wikipedia/commons/5/56/John_Roberts_2021.jpg" }, 
-  { "q": "Theo Hiến Pháp, chánh phủ liên bang có một số quyền. Một trong các quyền của chánh phủ liên bang là?", "a": "in tiền" },
-  { "q": "Theo Hiến Pháp, các tiểu bang có một số quyền. Một trong những quyền này là gì? ", "a": "cấp bằng lái xe" }, 
-  { "q": "Thống Đốc tiểu bang của bạn tên gì?", "a": "Kim Reynolds","img":"https://www.nga.org/wp-content/uploads/2019/09/2022_GovKimReynolds_Headshot_Closeup_Flags_200h_squrare.jpg" }, 
-  { "q": "Thủ phủ của tiểu bang bạn tên gì?", "a": "Des Moines" }, 
-  { "q": "Hai đảng chính của Hoa Kỳ là gì?", "a": "Dân Chủ và Cộng Hòa" },
-  { "q": "Đảng của Tổng Thống hiện tại là đảng nào?", "a": "Đảng Cộng Hòa" }, 
-  { "q": "Chủ Tịch Hạ Viện hiện thời tên gì?", "a": "Mike Johnson","img":"https://www.washingtonian.com/wp-content/uploads/2023/10/us_rep_mike_johnson_official_photo-994x1243.jpg" },
-  { "q": "Kể một trong bốn tu chính án nói về quyền cầu cử", "a": "Công dân mười tám (18) tuổi và hơn (được đi bầu)." }, 
-  { "q": "Một bổn phận chỉ dành riêng cho công dân Hoa Kỳ là gì?", "a": " đi bầu trong bầu cử liên bang" }, 
-  { "q": "Cho biết một quyền của riêng công dân Hoa Kỳ.", "a": "Bỏ phiếu liên bang" },
-  { "q": "Cho biết hai quyền của mỗi người sống ở Hoa Kỳ?", "a": "tự do ngôn luận và tự do tín ngưỡng" }, 
-  { "q": "Khi nói Lời Tuyên Thệ Trung Thành, chúng ta trung thành với cái gì?", "a": "Hoa Kỳ" }, 
-  { "q": "Khi trở thành công dân Hoa Kỳ, một trong những lời hứa của bạn là gì?", "a": "trung thành với quốc gia Hoa Kỳ" }, 
-  { "q": "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?", "a": "Mười Tám (18) và hơn" }, 
-  { "q": "Kể hai cách công dân Hoa Kỳ có thể tham dự vào nền dân chủ.", "a": "Bỏ phiếu và tranh cử" }, 
-  { "q": "Ngày cuối cùng nộp thuế liên bang là ngày nào?", "a": "15 Tháng Tư" }, 
-  { "q": "Khi nào tất cả nam giới phải ghi tên cho Sở Quân Vụ ?", "a": "ở giữa tuổi mười tám (18) và hai mươi sáu (26)" }, 
-  { "q": "Một trong những lý do khiến người di dân thời thuộc địa tới Mỹ Châu là gì?", "a": "tự do" },
-  { "q": "Những ai sống tại Mỹ trước khi người Âu Châu tới?", "a": "người da đỏ Mỹ Châu" }, 
-  { "q": "Nhóm người nào được mang tới Mỹ Châu và bán làm nô lệ?", "a": "người Phi Châu" }, 
-  { "q": "Tại sao những người di dân thời thuộc địa chống lại người Anh?", "a": "vì thuế má cao quá" }, 
-  { "q": "Ai viết Bản Tuyên Ngôn Độc Lập?", "a": "(Thomas) Jefferson" }, 
-  { "q": "Bản Tuyên Ngôn Độc Lập được chấp nhận lúc nào?", "a": "4 Tháng Bẩy 1776" },
-  { "q": "Có 13 tiểu bang nguyên thủy. Cho biết ba tiểu bang.", "a": "New York,Maryland,New Jersey" },
-  { "q": "Việc gì xảy ra tại Đại Hội Lập Hiến ?", "a": "Soạn thảo Hiến Pháp" }, 
-  { "q": "Hiến Pháp được soạn thảo khi nào?", "a": "1787" }, 
-  { "q": "Các bài tham luận gọi là Federalist Papers có mục đích hỗ trợ việc thông qua Hiến Pháp Hoa Kỳ. Kể tên một trong những người viết tham luận.", "a": " (John) Jay" }, 
-  { "q": "Benjamin Franklin nổi tiếng về điều gì?", "a": "khởi công xây các thư viện miễn phí đầu tiên của Hoa Kỳ" }, 
-  { "q": "Ai là Tổng Thống đầu tiên?", "a": " (George) Washington" },
-  { "q": "Ai được gọi là cha đẻ của nước Mỹ?", "a": " (George) Washington" }, 
-  { "q": "Hoa Kỳ mua lãnh thổ nào của Pháp vào năm 1803?", "a": "Louisiana" }, 
-  { "q": "Nói tên một trong những cuộc chiến Hoa Kỳ tham dự thời 1800.", "a": "Nội chiến" },
-  { "q": "Tên gọi của cuộc chiến trên đất Hoa Kỳ giữa miền Bắc và miền Nam là gì?", "a": "Nội chiến" },
-  { "q": "Cho biết một vấn đề đưa tới cuộc nội chiến.", "a": "vấn đề nô lệ" },
-  { "q": "Một điều quan trọng mà Abraham Lincoln làm là gì?", "a": "giải phóng nô lệ" }, 
-  { "q": "Tuyên Ngôn Giải Phóng làm gì?", "a": "giải phóng nô lệ" },
-  { "q": "Bà Susan B. Anthony làm gì?", "a": " tranh đấu cho quyền phụ nữ" },
-  { "q": "Cho biết một cuộc chiến mà Hoa Kỳ tham dự vào thập niên 1900.", "a": "Thế Chiến Thứ Nhất" }, 
-  { "q": "Ai là Tổng Thống trong Thế Chiến Thứ Nhất?", "a": "(Woodrow) Wilson" }, 
-  { "q": "Ai là Tổng Thống trong thời kỳ Khủng Hoảng Kinh Tế và Thế Chiến Thứ Hai?", "a": "(Franklin) Roosevelt" }, 
-  { "q": "Trong Thế Chiến Thứ Hai, Hoa Kỳ chiến đấu chống các nước nào? ", "a": "Nhật Bản, Đức và Ý" }, 
-  { "q": "Trước khi trở thành Tổng Thống, Eisenhower là tướng lãnh. Ông ta đánh trận nào?", "a": "Thế Chiến Thứ Hai" }, 
-  { "q": "Trong thời kỳ Chiến Tranh Lạnh, quan tâm chính của Hoa Kỳ là gì?", "a": "Chủ Nghĩa Cộng Sản" }, 
-  { "q": "Phong trào nào tìm cách chấm dứt sự phân biệt chủng tộc?", "a": " (phong trào) dân quyền" },
-  { "q": "Martin Luther King, Jr. đã làm gì?", "a": "tranh đấu cho dân quyền" },
-  { "q": "Biến cố lớn lao nào xảy ra vào ngày 11 tháng 9 năm 2001 tại Hoa Kỳ?", "a": "Bọn khủng bố tấn công Hoa Kỳ" },
-  { "q": "Kể tên một bộ lạc da đỏ tại Mỹ", "a": "Hopi" }, 
-  { "q": "Cho biết một trong hai con sông dài nhất ở Hoa Kỳ.", "a": " (Sông) Mít xi xi pi","img":"https://fishingbooker-prod-blog-backup.s3.amazonaws.com/blog/media/2019/12/14135453/Mississippi-River-Fishing.jpg" },
-  { "q": "Biển nào ở bờ biển phía <span class=\"highlight\">Tây</span> Hoa Kỳ?", "a": "Thái-Bình-Dương" },
-  { "q": "Biển nào ở bờ biển phía <span class=\"highlight\">Đông</span> Hoa Kỳ?", "a": "Đại-Tây-Dương" }, 
-  { "q": "Cho biết một lãnh thổ hải ngoại của Hoa Kỳ.", "a": "Đảo Guam" }, 
-  { "q": "Cho biết một trong những tiểu bang ráp ranh Canada.", "a": "New York","img":"https://studentweb.cortland.edu/evelyn.tamela/mini-project-3/New-York-State-Map.GIF"},
-  { "q": "Cho biết một trong những tiểu bang ráp ranh Mexico", "a": "California" },
-  { "q": "Thủ đô của Hoa Kỳ tên gì?", "a": "Washington, D.C." }, 
-  { "q": "Tượng Nữ Thần Tự Do ở đâu?", "a": "Cảng New York" },
-  { "q": "Tại sao lá cờ Hoa Kỳ có 13 lằn gạch?", "a": "bởi vì đã có 13 thuộc địa nguyên thủy" }, 
-  { "q": "Tại sao lá cờ Hoa Kỳ có 50 ngôi sao?", "a": "bởi vì có 50 tiểu bang" },
-  { "q": "Tựa của bài quốc ca Hoa Kỳ là gì?", "a": "The Star-Spangled Banner" }, 
-  { "q": "Ngày nào là ngày Lễ Độc Lập?", "a": "4 Tháng Bẩy" }, 
-  { "q": "Cho biết hai ngày lễ quốc gia của Hoa Kỳ.", "a": " Tết Tây và Giáng Sinh " }
+  {
+    "q_vn": "Tu chính án là gì?",
+    "q_en": "What is an amendment?",
+    "a_vn": "Một sự thay đổi Hiến Pháp",
+    "a_en": "A change to the Constitution"
+  },
+  {
+    "q_vn": "Mười tu chính án đầu gọi là gì?",
+    "q_en": "What do we call the first ten amendments to the Constitution?",
+    "a_vn": "Luật Dân Quyền",
+    "a_en": "The Bill of Rights"
+  },
+  {
+    "q_vn": "Kể một quyền trong Tu chính án thứ nhất.",
+    "q_en": "What is one right or freedom from the First Amendment?",
+    "a_vn": "Tự do ngôn luận",
+    "a_en": "Speech"
+  },
+  {
+    "q_vn": "Hiến Pháp có bao nhiêu tu chính án?",
+    "q_en": "How many amendments does the Constitution have?",
+    "a_vn": "27",
+    "a_en": "27"
+  },
+  {
+    "q_vn": "Bản Tuyên Ngôn Độc Lập làm gì?",
+    "q_en": "What did the Declaration of Independence do?",
+    "a_vn": "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)",
+    "a_en": "Declared our independence (from Great Britain)"
+  },
+  {
+    "q_vn": "Kể hai quyền trong Tuyên ngôn Độc lập.",
+    "q_en": "What are two rights in the Declaration of Independence?",
+    "a_vn": "Quyền sống và tự do",
+    "a_en": "Life and liberty"
+  },
+  {
+    "q_vn": "Tự do tôn giáo là gì?",
+    "q_en": "What is freedom of religion?",
+    "a_vn": "Theo hoặc không theo tôn giáo nào cũng được",
+    "a_en": "You can practice any religion, or not practice a religion."
+  },
+  {
+    "q_vn": "Hệ thống kinh tế của Hoa Kỳ là gì?",
+    "q_en": "What is the economic system in the United States?",
+    "a_vn": "Kinh tế tư bản",
+    "a_en": "Capitalist economy"
+  },
+  {
+    "q_vn": "“Thượng tôn pháp luật” nghĩa là gì?",
+    "q_en": "What is the rule of law?",
+    "a_vn": "Mọi người phải tuân luật",
+    "a_en": "Everyone must follow the law"
+  },
+  {
+    "q_vn": "Kể một nhánh của chính quyền.",
+    "q_en": "Name one branch or part of the government.",
+    "a_vn": "Tổng Thống",
+    "a_en": " "
+  },
+  {
+    "q_vn": "Điều gì ngăn một nhánh chính quyền quá mạnh?",
+    "q_en": "What stops one branch of government from becoming too powerful?",
+    "a_vn": "phân quyền",
+    "a_en": "separation of powers"
+  },
+  {
+    "q_vn": "Ai phụ trách hành pháp?",
+    "q_en": "Who is in charge of the executive branch?",
+    "a_vn": "Tổng Thống",
+    "a_en": "the President"
+  },
+  {
+    "q_vn": "Ai làm luật liên bang?",
+    "q_en": "Who makes federal laws?",
+    "a_vn": "Quốc Hội",
+    "a_en": "Congress"
+  },
+  {
+    "q_vn": "Hai phần của Quốc Hội là gì?",
+    "q_en": "What are the two parts of the U.S. Congress?",
+    "a_vn": "Thượng viện và Hạ viện",
+    "a_en": "The Senate and House of Representatives"
+  },
+  {
+    "q_vn": "Có bao nhiêu Thượng nghị sĩ?",
+    "q_en": "How many U.S. Senators are there?",
+    "a_vn": "100",
+    "a_en": "100"
+  },
+  {
+    "q_vn": "Chúng ta bầu Thượng nghị sĩ cho bao nhiêu năm?",
+    "q_en": "We elect a U.S. Senator for how many years?",
+    "a_vn": "6 năm",
+    "a_en": "6"
+  },
+  {
+    "q_vn": "Nêu một trong các Thượng nghị sĩ của tiểu bang bạn.",
+    "q_en": "Who is one of your state’s U.S. Senators now?",
+    "a_vn": "Joni Ernst",
+    "a_en": "Joni Ernst",
+	"img": "https://www.iri.org/wp-content/uploads/2018/08/Joni-Ernst-headshot.jpg" 
+  },
+  {
+    "q_vn": "Hạ viện có bao nhiêu dân biểu?",
+    "q_en": "The House of Representatives has how many voting members?",
+    "a_vn": "435",
+    "a_en": "435"
+  },
+  {
+    "q_vn": "Chúng ta bầu dân biểu cho mấy năm?",
+    "q_en": "We elect a U.S. Representative for how many years?",
+    "a_vn": "2 năm",
+    "a_en": "2"
+  },
+  {
+    "q_vn": "Tên dân biểu của bạn là ai?",
+    "q_en": "Name your U.S. Representative.",
+    "a_vn": "Mariannette Miller-Meeks",
+    "a_en": "Mariannette Miller-Meeks",
+	"img":"https://yaf.org/wp-content/uploads/2024/05/mariannette-miller-meeks.jpeg"
+  },
+  {
+    "q_vn": "Thượng nghị sĩ đại diện cho ai?",
+    "q_en": "Who does a U.S. Senator represent?",
+    "a_vn": "Tất cả người dân trong tiểu bang",
+    "a_en": "All people of the state"
+  },
+  {
+    "q_vn": "Tại sao một số tiểu bang có nhiều dân biểu hơn?",
+    "q_en": "Why do some states have more Representatives than other states?",
+    "a_vn": "Vì đông dân hơn",
+    "a_en": "Because of the state’s population"
+  },
+  {
+    "q_vn": "Nhiệm kỳ Tổng Thống là mấy năm?",
+    "q_en": "We elect a President for how many years?",
+    "a_vn": "4 năm",
+    "a_en": "4"
+  },
+  {
+    "q_vn": "Bầu Tổng Thống vào tháng nào?",
+    "q_en": "In what month do we vote for President?",
+    "a_vn": "Tháng Mười Một",
+    "a_en": "November"
+  },
+  {
+    "q_vn": "Hiện nay Tổng Thống là ai?",
+    "q_en": "What is the name of the President of the United States now?",
+    "a_vn": "Donald Trump",
+    "a_en": "Donald Trump",
+	"img":"https://trumpwhitehouse.archives.gov/wp-content/uploads/2017/11/President-Trump-Official-Portrait-200x200.jpg"
+  },
+  {
+    "q_vn": "Hiện nay Phó Tổng Thống là ai?",
+    "q_en": "What is the name of the Vice President of the United States now?",
+    "a_vn": "JD Vance",
+    "a_en": "JD Vance",
+	"img":"https://www.whitehouse.gov/wp-content/uploads/2025/01/Vice-President-Elect-J.D.-Vance.jpg"
+  },
+  {
+    "q_vn": "Ai trở thành Tổng Thống nếu Tổng Thống không còn làm việc?",
+    "q_en": "If the President can no longer serve, who becomes President?",
+    "a_vn": "Phó Tổng Thống",
+    "a_en": "The Vice President"
+  },
+  {
+    "q_vn": "Ai trở thành Tổng Thống nếu cả Tổng Thống và Phó TT không còn làm việc?",
+    "q_en": "If both the President and the Vice President can no longer serve, who becomes President?",
+    "a_vn": "Chủ tịch Hạ viện",
+    "a_en": "The Speaker of the House"
+  },
+  {
+    "q_vn": "Ai là Tổng tư lệnh quân đội?",
+    "q_en": "Who is the Commander in Chief of the military?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Ai ký dự luật thành luật?",
+    "q_en": "Who signs bills to become laws?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Ai có quyền phủ quyết dự luật?",
+    "q_en": "Who vetoes bills?",
+    "a_vn": "Tổng Thống",
+    "a_en": "The President"
+  },
+  {
+    "q_vn": "Nội các Tổng Thống làm gì?",
+    "q_en": "What does the President’s Cabinet do?",
+    "a_vn": "Cố vấn cho Tổng Thống",
+    "a_en": "Advises the President"
+  },
+  {
+    "q_vn": "Kể hai chức vụ nội các.",
+    "q_en": "What are two Cabinet-level positions?",
+    "a_vn": "Phó Tổng Thống và Bộ Trưởng Giáo Dục",
+    "a_en": "Vice President and Secretary of Education"
+  },
+  {
+    "q_vn": "Ngành tư pháp làm gì?",
+    "q_en": "What does the judicial branch do?",
+    "a_vn": "duyệt lại luật lệ",
+    "a_en": "Reviews laws"
+  },
+  {
+    "q_vn": "Tòa án cao nhất là gì?",
+    "q_en": "What is the highest court in the United States?",
+    "a_vn": "Tối Cao Pháp Viện",
+    "a_en": "The Supreme Court"
+  },
+  {
+    "q_vn": "Tối Cao Pháp Viện có bao nhiêu thẩm phán?",
+    "q_en": "How many justices are on the Supreme Court?",
+    "a_vn": "9",
+    "a_en": "9"
+  },
+  {
+    "q_vn": "Ai là Chủ tịch Tối Cao Pháp Viện?",
+    "q_en": "Who is the Chief Justice of the United States now?",
+    "a_vn": "John Roberts",
+    "a_en": "John Roberts",
+	"img":"https://upload.wikimedia.org/wikipedia/commons/5/56/John_Roberts_2021.jpg"
+  },
+  {
+    "q_vn": "Theo Hiến Pháp, chính phủ liên bang có một số quyền. Một quyền là gì?",
+    "q_en": "Under our Constitution, some powers belong to the federal government. What is one power of the federal government?",
+    "a_vn": "In tiền",
+    "a_en": "To print money"
+  },
+  {
+    "q_vn": "Theo Hiến Pháp, tiểu bang có một số quyền. Một quyền là gì?",
+    "q_en": "Under our Constitution, some powers belong to the states. What is one power of the states?",
+    "a_vn": "Cấp bằng lái xe",
+    "a_en": "Provide driver's licenses"
+  },
+  {
+    "q_vn": "Thống đốc tiểu bang bạn tên gì?",
+    "q_en": "Who is the Governor of your state now?",
+    "a_vn": "Kim Reynolds",
+    "a_en": "Kim Reynolds",
+	"img":"https://www.nga.org/wp-content/uploads/2019/09/2022_GovKimReynolds_Headshot_Closeup_Flags_200h_squrare.jpg"
+  },
+  {
+    "q_vn": "Thủ phủ của tiểu bang bạn tên gì?",
+    "q_en": "What is the capital of your state?",
+    "a_vn": "Des Moines",
+    "a_en": "Des Moines"
+  },
+  {
+    "q_vn": "Hai đảng chính của Hoa Kỳ là gì?",
+    "q_en": "What are the two major political parties in the United States?",
+    "a_vn": "Dân Chủ và Cộng Hòa",
+    "a_en": "Democratic and Republican"
+  },
+  {
+    "q_vn": "Đảng của Tổng Thống hiện tại là gì?",
+    "q_en": "What is the political party of the President now?",
+    "a_vn": "Đảng Cộng Hòa",
+    "a_en": "Đảng Cộng Hòa"
+  },
+  {
+    "q_vn": "Chủ tịch Hạ viện hiện nay là ai?",
+    "q_en": "What is the name of the Speaker of the House of Representatives now?",
+    "a_vn": "Mike Johnson",
+    "a_en": "Mike Johnson",
+	"img":"https://www.washingtonian.com/wp-content/uploads/2023/10/us_rep_mike_johnson_official_photo-994x1243.jpg"
+  },
+  {
+    "q_vn": "Kể một trong bốn tu chính án nói về quyền bầu cử.",
+    "q_en": "There are four amendments to the Constitution about who can vote. Describe one of them.",
+    "a_vn": "Công dân 18 tuổi trở lên được bầu",
+    "a_en": "Citizens eighteen (18) and older can vote"
+  },
+  {
+    "q_vn": "Một bổn phận chỉ dành cho công dân Hoa Kỳ là gì?",
+    "q_en": "What is one responsibility that is only for United States citizens?",
+    "a_vn": "đi bầu trong bầu cử liên bang",
+    "a_en": "vote in a federal election"
+  },
+  {
+    "q_vn": "Kể một quyền của công dân Hoa Kỳ.",
+    "q_en": "Name one right only for United States citizens.",
+    "a_vn": "Bỏ phiếu liên bang",
+    "a_en": "Vote in a federal election"
+  },
+  {
+    "q_vn": "Kể hai quyền của mọi người sống ở Hoa Kỳ.",
+    "q_en": "What are two rights of everyone living in the United States?",
+    "a_vn": "Tự do ngôn luận và tín ngưỡng",
+    "a_en": "Freedom of speech and freedom of religion"
+  },
+  {
+    "q_vn": "Khi nói Lời Tuyên Thệ Trung Thành, chúng ta trung thành với ai/cái gì?",
+    "q_en": "What do we show loyalty to when we say the Pledge of Allegiance?",
+    "a_vn": "Hoa Kỳ",
+    "a_en": "The United States"
+  },
+  {
+    "q_vn": "Một lời hứa khi trở thành công dân Hoa Kỳ là gì?",
+    "q_en": "What is one promise you make when you become a United States citizen?",
+    "a_vn": "Trung thành với Hoa Kỳ",
+    "a_en": "Be loyal to the United States"
+  },
+  {
+    "q_vn": "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?",
+    "q_en": "How old do citizens have to be to vote for President?",
+    "a_vn": "18 tuổi",
+    "a_en": "18 and older"
+  },
+  {
+    "q_vn": "Kể hai cách công dân có thể tham gia nền dân chủ.",
+    "q_en": "What are two ways that Americans can participate in their democracy?",
+    "a_vn": "Bỏ phiếu và tranh cử",
+    "a_en": "Vote and run for office"
+  },
+  {
+    "q_vn": "Ngày cuối cùng nộp thuế liên bang là ngày nào?",
+    "q_en": "When is the last day you can send in federal income tax forms?",
+    "a_vn": "15 Tháng Tư",
+    "a_en": "April 15"
+  },
+  {
+    "q_vn": "Khi nào nam giới phải ghi danh Sở Quân vụ?",
+    "q_en": "When must all men register for the Selective Service?",
+    "a_vn": "Tuổi 18",
+    "a_en": "At age eighteen (18)"
+  },
+  {
+    "q_vn": "Một lý do người di dân thời thuộc địa đến Mỹ Châu là gì?",
+    "q_en": "What is one reason colonists came to America?",
+    "a_vn": "Tự do",
+    "a_en": "Freedom"
+  },
+  {
+    "q_vn": "Ai sống ở Mỹ trước khi người châu Âu tới?",
+    "q_en": "Who lived in America before the Europeans arrived?",
+    "a_vn": "Người Da đỏ Mỹ",
+    "a_en": "American Indians"
+  },
+  {
+    "q_vn": "Nhóm người nào bị đưa đến Mỹ và bán làm nô lệ?",
+    "q_en": "What group of people was taken to America and sold as slaves?",
+    "a_vn": "Người châu Phi",
+    "a_en": "Africans"
+  },
+  {
+    "q_vn": "Tại sao người thực dân đánh nhau với người Anh?",
+    "q_en": "Why did the colonists fight the British?",
+    "a_vn": "Thuế má cao/không có đại diện",
+    "a_en": "Because of high taxes (taxation without representation)"
+  },
+  {
+    "q_vn": "Ai viết Tuyên ngôn Độc lập?",
+    "q_en": "Who wrote the Declaration of Independence?",
+    "a_vn": "Thomas Jefferson",
+    "a_en": "Thomas Jefferson"
+  },
+  {
+    "q_vn": "Tuyên ngôn Độc lập được thông qua ngày nào?",
+    "q_en": "When was the Declaration of Independence adopted?",
+    "a_vn": "Ngày 4 Tháng 7, 1776",
+    "a_en": "July 4, 1776"
+  },
+  {
+    "q_vn": "13 bang ban đầu gọi là gì? Kể ba bang.",
+    "q_en": "There were 13 original states. Name three.",
+    "a_vn": "New York,Maryland,New Jersey",
+    "a_en": "New York,Maryland,New Jersey"
+  },
+  {
+    "q_vn": "Hội nghị Lập hiến làm gì?",
+    "q_en": "What happened at the Constitutional Convention?",
+    "a_vn": "Soạn Hiến Pháp",
+    "a_en": "The Constitution was written"
+  },
+  {
+    "q_vn": "Hiến Pháp được viết năm nào?",
+    "q_en": "When was the Constitution written?",
+    "a_vn": "1787",
+    "a_en": "1787"
+  },
+  {
+    "q_vn": "Ai được gọi là Cha đẻ của Hiến Pháp?",
+    "q_en": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+    "a_vn": " (John) Jay",
+    "a_en": " (John) Jay"
+  },
+  {
+    "q_vn": "Benjamin Franklin nổi tiếng về điều gì?",
+    "q_en": "What is one thing Benjamin Franklin is famous for?",
+    "a_vn": "Nhà ngoại giao Hoa Kỳ",
+    "a_en": "started the first free libraries"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống đầu tiên?",
+    "q_en": "Who was the first President?",
+    "a_vn": "George Washington",
+    "a_en": "George Washington"
+  },
+   {
+    "q_vn": "Ai được gọi là 'Cha của Nước Mỹ'?",
+    "q_en": "Who is the 'Father of our Country'?",
+    "a_vn": "George Washington",
+    "a_en": "George Washington"
+  },
+    {
+    "q_vn": "Năm 1803, Hoa Kỳ mua lãnh thổ nào từ Pháp?",
+    "q_en": "What territory did the United States buy from France in 1803?",
+    "a_vn": "Lãnh thổ Louisiana",
+    "a_en": "The Louisiana Territory"
+  },
+  {
+    "q_vn": "Nói tên một trong những cuộc chiến Hoa Kỳ tham dự thời 1800.",
+    "q_en": "Name one war fought by the United States in the 1800s.",
+    "a_vn": "Nội chiến",
+    "a_en": "The Civil War"
+  },
+  {
+    "q_vn": "Tên gọi của cuộc chiến trên đất Hoa Kỳ giữa miền Bắc và miền Nam là gì?",
+    "q_en": "Name the U.S. war between the North and the South.",
+    "a_vn": "Nội chiến",
+    "a_en": "The Civil War"
+  },
+  {
+    "q_vn": "Một vấn đề dẫn đến Nội chiến là gì?",
+    "q_en": "Name one problem that led to the Civil War.",
+    "a_vn": "Chế độ nô lệ",
+    "a_en": "Slavery"
+  },
+  {
+    "q_vn": "Một điều quan trọng mà Abraham Lincoln làm là gì?",
+    "q_en": "What was one important thing that Abraham Lincoln did?",
+    "a_vn": "Giải phóng nô lệ",
+    "a_en": "Freed the slaves"
+  },
+  {
+    "q_vn": "Tuyên ngôn Giải phóng làm gì?",
+    "q_en": "What did the Emancipation Proclamation do?",
+    "a_vn": "Giải phóng nô lệ",
+    "a_en": "Freed the slaves"
+  },
+  {
+    "q_vn": "Susan B. Anthony đã làm gì?",
+    "q_en": "What did Susan B. Anthony do?",
+    "a_vn": "Đấu tranh cho quyền phụ nữ",
+    "a_en": "Fought for women’s rights"
+  },
+  {
+    "q_vn": "Kể một cuộc chiến Hoa Kỳ tham gia trong thế kỷ 1900.",
+    "q_en": "Name one war fought by the United States in the 1900s.",
+    "a_vn": "Thế chiến thứ nhất",
+    "a_en": "World War I"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống trong Thế chiến I?",
+    "q_en": "Who was President during World War I?",
+    "a_vn": "Woodrow Wilson",
+    "a_en": "Woodrow Wilson"
+  },
+  {
+    "q_vn": "Ai là Tổng Thống trong Thế chiến II?",
+    "q_en": "Who was President during World War II?",
+    "a_vn": "Franklin Roosevelt",
+    "a_en": "Franklin D. Roosevelt"
+  },
+  {
+    "q_vn": "Trong Thế chiến II, Hoa Kỳ chiến đấu chống ai?",
+    "q_en": "Who did the United States fight in World War II?",
+    "a_vn": "Nhật, Đức, Ý",
+    "a_en": "Japan, Germany, and Italy"
+  },
+  {
+    "q_vn": "Trước khi làm Tổng Thống, Eisenhower là tướng trong cuộc chiến nào?",
+    "q_en": "Before he was President, Eisenhower was a general. What war was he in?",
+    "a_vn": "Thế chiến II",
+    "a_en": "World War II"
+  },
+  {
+    "q_vn": "Chiến tranh Lạnh là gì?",
+    "q_en": "During the Cold War, what was the main concern of the United States?",
+    "a_vn": "Chủ nghĩa cộng sản",
+    "a_en": "Communism"
+  },
+  {
+    "q_vn": "Phong trào nào cố gắng chấm dứt phân biệt chủng tộc?",
+    "q_en": "What movement tried to end racial discrimination?",
+    "a_vn": "Phong trào Dân quyền",
+    "a_en": "Civil Rights movement"
+  },
+  {
+    "q_vn": "Martin Luther King, Jr. đã làm gì?",
+    "q_en": "What did Martin Luther King, Jr. do?",
+    "a_vn": "Đấu tranh cho quyền bình đẳng",
+    "a_en": "Fought for civil rights"
+  },
+  {
+    "q_vn": "Sự kiện lớn nào xảy ra vào ngày 11/9/2001 tại Hoa Kỳ?",
+    "q_en": "What major event happened on September 11, 2001, in the United States?",
+    "a_vn": "Khủng bố tấn công Hoa Kỳ",
+    "a_en": "Terrorists attacked the United States"
+  },
+  {
+    "q_vn": "Kể một bộ tộc Da đỏ ở Hoa Kỳ.",
+    "q_en": "Name one American Indian tribe in the United States.",
+    "a_vn": "Hopi",
+    "a_en": ""
+  },
+  {
+    "q_vn": "Kể một trong hai dòng sông dài nhất ở Hoa Kỳ.",
+    "q_en": "Name one of the two longest rivers in the United States.",
+    "a_vn": "Mississippi (Mít xi xi pi)",
+    "a_en": "Mississippi River",
+	"img":"https://fishingbooker-prod-blog-backup.s3.amazonaws.com/blog/media/2019/12/14135453/Mississippi-River-Fishing.jpg"
+  },
+  {
+    "q_vn": "Bờ biển phía tây Hoa Kỳ giáp đại dương nào?",
+    "q_en": "What ocean is on the West Coast of the United States?",
+    "a_vn": "Thái Bình Dương",
+    "a_en": "Pacific Ocean"
+  },
+  {
+    "q_vn": "Bờ biển phía đông Hoa Kỳ giáp đại dương nào?",
+    "q_en": "What ocean is on the East Coast of the United States?",
+    "a_vn": "Đại Tây Dương",
+    "a_en": "Atlantic Ocean"
+  },
+  {
+    "q_vn": "Kể một lãnh thổ của Hoa Kỳ.",
+    "q_en": "Name one U.S. territory.",
+    "a_vn": "Đảo Guam",
+    "a_en": "Guam"
+  },
+  {
+    "q_vn": "Kể một tiểu bang giáp Canada.",
+    "q_en": "Name one state that borders Canada.",
+    "a_vn": "New York",
+    "a_en": "New York",
+	"img":"https://studentweb.cortland.edu/evelyn.tamela/mini-project-3/New-York-State-Map.GIF"
+  },
+  {
+    "q_vn": "Kể một tiểu bang giáp Mexico.",
+    "q_en": "Name one state that borders Mexico.",
+    "a_vn": "California",
+    "a_en": "California"
+  },
+  {
+    "q_vn": "Thủ đô Hoa Kỳ là gì?",
+    "q_en": "What is the capital of the United States?",
+    "a_vn": "Washington, DC",
+    "a_en": "Washington, D.C."
+  },
+  {
+    "q_vn": "Tượng Nữ Thần Tự Do ở đâu?",
+    "q_en": "Where is the Statue of Liberty?",
+    "a_vn": "New York (Cảng New York)",
+    "a_en": "New York Harbor"
+  },
+  {
+    "q_vn": "Vì sao có 13 sọc trên quốc kỳ?",
+    "q_en": "Why does the flag have 13 stripes?",
+    "a_vn": "Đại diện 13 bang ban đầu",
+    "a_en": "Because there were 13 original colonies"
+  },
+  {
+    "q_vn": "Vì sao có 50 ngôi sao trên quốc kỳ?",
+    "q_en": "Why does the flag have 50 stars?",
+    "a_vn": "Mỗi ngôi sao đại diện một bang",
+    "a_en": "Because there are 50 states"
+  },
+  {
+    "q_vn": "Quốc ca Hoa Kỳ tên gì?",
+    "q_en": "What is the name of the national anthem?",
+    "a_vn": "The Star-Spangled Banner",
+    "a_en": "The Star-Spangled Banner"
+  },
+  {
+    "q_vn": "Ngày Lễ Độc lập là khi nào?",
+    "q_en": "When do we celebrate Independence Day?",
+    "a_vn": "Ngày 4 Tháng 7",
+    "a_en": "July 4"
+  },
+  {
+    "q_vn": "Kể hai ngày lễ liên bang của Hoa Kỳ.",
+    "q_en": "Name two national U.S. holidays.",
+    "a_vn": "Tết Dương lịch và Giáng ",
+    "a_en": "New Year’s Day and Christmas"
+  }
+ 
+
 ]
