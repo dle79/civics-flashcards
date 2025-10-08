@@ -1,3 +1,24 @@
-[ 
-  { "q": "Tu chính án là gì?", "a": "một sự thay đổi (trong Hiến Pháp)" }
+[
+  {
+    "q": "<span class=\"highlight\">LUẬT CAO NHẤT</span> của quốc gia là gì?",
+    "a": "Hiến Pháp"
+  },
+  {
+    "q": "<span class=\"highlight\">Hiến Pháp</span> làm gì?",
+    "a": "Thiết lập chánh phủ"
+  },
+  {
+    "q": "Tu chính án là gì?",
+    "a": "một sự thay đổi (trong Hiến Pháp)"
+  },
+  {
+    "q": "Ai là Tổng Thống đầu tiên của Hoa Kỳ?",
+    "a": "George Washington",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/6/6f/George_Washington.jpg"
+  },
+  {
+    "q": "Tựa của bài quốc ca Hoa Kỳ là gì?",
+    "a": "The Star-Spangled Banner",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg"
+  }
 ]
