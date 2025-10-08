@@ -229,6 +229,10 @@ fetch("civics_questions_vi_en.json")
   .then(data => {
     cards = data;
     showCard(0);
+  })
+  .catch(err => {
+    console.error("❌ Error loading JSON:", err);
+    alert("Không thể tải file câu hỏi. Kiểm tra console để xem lỗi.");
   });
 
 function showCard(i) {
