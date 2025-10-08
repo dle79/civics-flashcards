@@ -7,6 +7,20 @@
   },  
   { "q": "<span class=\"highlight\">BA CHỮ ĐẦU TIÊN</span> của Hiến Pháp là gì?", 
     "a": "Chúng ta là nhân dân" 
+  }, 
+  { "q": "Tu chính án là gì?", 
+    "a": "một sự thay đổi (trong Hiến Pháp)" 
+  }, 
+  { "q": "<span class=\"highlight\">MƯỜI TU CHÍNH</span> đầu gọi là gì?", 
+    "a": "Luật Dân Quyền" 
+  }, 
+  { "q": "<span class=\"highlight\">KỂ RA MỘT QUYỀN</span> trong Tu Chính Án thứ nhất", 
+    "a": "Tự do ngôn luận" 
+  }, 
+  { "q": "Hiến Pháp có bao nhiêu tu chính án?",
+    "a": "hai mươi bảy (27)" 
+   },
+  { "q": "Bản Tuyên Ngôn Độc Lập làm gì?", 
+    "a": "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" 
   }
-  
 ]
