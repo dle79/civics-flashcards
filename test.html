@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>100 Câu Hỏi Lịch Sử Mỹ</title>
+
+<style>
+/* 🧩 Prevent zoom or highlight on iPhone */
+html, body {
+  touch-action: manipulation;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-text-size-adjust: 100%;
+}
+button, input {
+  font-size: 16px !important;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 🔹 Basic page layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* 🔹 Title + instruction */
+h2 {
+  margin-top: 1vh;              /* moved up slightly */
+  font-size: 12vw;
+  font-weight: bold;
+  color: #003366;
+}
+p {
+  font-size: 4.8vw;             /* slightly smaller text */
+  line-height: 1.3;
+  margin-top: 0.5vh;            /* closer to title */
+  margin-bottom: 1vh;           /* less space before card */
+}
+
+/* 🔹 Flashcard area */
+.flashcard {
+  width: 95vw;
+  height: 40vh;                 /* shorter for space efficiency */
+  margin: 1vh auto 3vh auto;    /* tighter vertical spacing */
+  perspective: 1000px;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+  cursor: pointer;
+}
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+/* 🔹 Front & back faces */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid #333;
+  border-radius: 25px;
+  padding: 4vw;
+  box-sizing: border-box;
+  text-align: center;
+}
+.front {
+  background: #fff;
+  font-size: 8vw;
+  font-weight: bold;
+}
+.back {
+  background: #e0f7fa;
+  font-size: 9vw;
+  font-weight: bold;
+  transform: rotateY(180deg);
+}
+
+/* 🔹 Question number */
+.question-number {
+  position: absolute;
+  top: 1vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 5vw;
+  font-weight: bold;
+  color: #222;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* 🔹 Highlight text */
+.highlight {
+  background-color: #fff176;
+  color: #000;
+  padding: 0 6px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+/* 🔹 Buttons area */
+.button-panel {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vh;
+  margin-bottom: 2vh;           /* moved up for better visibility */
+}
+
+/* 🔹 Go-to-question input & button */
+.goto-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+.goto-container input {
+  font-size: 6vw;
+  padding: 1.5vh 2vw;
+  width: 42vw;
+  border-radius: 12px;
+  border: 2px solid #0077cc;
+  text-align: center;
+}
+.goto-container button {
+  font-size: 6vw;
+  padding: 1.5vh 3vw;
+  border: none;
+  border-radius: 12px;
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+}
+
+/* 🔹 Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8vw;
+}
+.nav-buttons button {
+  font-size: 7vw;
+  padding: 2vh 7vw;
+  min-width: 38vw;
+  border: none;
+  border-radius: 20px;
+  background: #0077cc;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 8px rgba(0,0,0,0.25);
+}
+button:hover { background: #005fa3; }
+
+/* 🖥 Desktop tweak */
+@media (min-width: 768px) {
+  h2 { font-size: 80px; }
+  p { font-size: 24px; margin-bottom: 10px; }
+  .front { font-size: 36px; }
+  .back { font-size: 42px; }
+  .question-number { font-size: 26px; }
+  .flashcard { height: 38vh; margin-bottom: 6vh; }
+  .goto-container input { font-size: 24px; width: 200px; }
+  .goto-container button, .nav-buttons button {
+    font-size: 26px;
+    min-width: 200px;
+  }
+}
+</style>
+
+</head>
+
+<body>
+<h2>🇺🇸 100 Câu Hỏi Lịch Sử Mỹ 🇻🇳</h2>
+<p>Nhấn vào thẻ để xem câu trả lời</p>
+
+<div id="flashcard" class="flashcard">
+  <div class="card" onclick="this.classList.toggle('flip')">
+    <div class="front">
+      <div class="question-number" id="qnum-front"></div>
+      <p id="question"></p>
+    </div>
+    <div class="back">
+      <div class="question-number" id="qnum-back"></div>
+      <p id="answer"></p>
+    </div>
+  </div>
+</div>
+
+<!-- 🔹 Button Section -->
+<div class="button-panel">
+  <div class="goto-container">
+    <input type="number" id="gotoInput" min="1" max="100" placeholder="Nhập số câu (1–100)">
+    <button onclick="gotoCard()">Đến câu hỏi</button>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prevBtn" onclick="prevCard()">⬅️ Trước</button>
+    <button id="nextBtn" onclick="nextCard()">Tiếp ➡️</button>
+  </div>
+</div>
+
+<script>
+const cards = [ 
+  { q: "<span class='highlight'>LUẬT CAO NHẤT</span> của quốc gia là gì?", a: "Hiến Pháp" },    
+  { q: "<span class='highlight'>Hiến Pháp</span> làm gì?", a: "Thiết lập chánh phủ" }, 
+  { q: "<span class='highlight'>BA CHỮ ĐẦU TIÊN</span> của Hiến Pháp là gì?", a: "Chúng ta là nhân dân" }, 
+  { q: "Tu chính án là gì?", a: "một sự thay đổi (trong Hiến Pháp)" }, 
+  { q: "<span class='highlight'>MƯỜI TU CHÍNH</span> đầu gọi là gì?", a: "Luật Dân Quyền" }, 
+  { q: "<span class='highlight'>KỂ RA MỘT QUYỀN</span> trong Tu Chính Án thứ nhất", a: "Tự do ngôn luận" }, 
+  { q: "Hiến Pháp có bao nhiêu tu chính án?", a: "hai mươi bảy (27)" },
+  { q: "Bản Tuyên Ngôn Độc Lập làm gì?", a: "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" }, 
+  { q: "Kể ra Hai quyền trong Bản Tuyên Ngôn Độc Lập?", a: "quyền sống và quyền tự do" }, 
+  { q: "Tự do tôn giáo là gì?", a: "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào" },
+  { q: "Hệ thống kinh tế của Hoa Kỳ là gì?", a: "kinh tế tư bản" }, 
+  { q: "“Thượng tôn luật pháp” là gì?", a: "Mọi người đều phải tuân theo luật pháp" },
+  { q: "Kể một nhánh của chính quyền", a: "Tổng Thống" }, 
+  { q: "Điều gì ngăn một nhánh chính quyền quá mạnh?", a: "phân quyền" }, 
+  { q: "Ai phụ trách hành pháp?", a: "Tổng Thống" }, 
+  { q: "Ai làm luật liên bang?", a: "Quốc Hội" },
+  { q: "Hai phần của Quốc Hội Hoa Kỳ là gì?", a: "Thượng và Hạ Nghị Viện" }, 
+  { q: "Có bao nhiêu Thượng Nghị Sĩ?", a: "một trăm (100)" }, 
+  { q: "Chúng ta bầu Thượng Nghị Sĩ cho bao nhiêu năm?", a: "sáu (6)" }, 
+  { q: "Ai là một trong những Thượng Nghị Sĩ Liên Bang của bạn?", a: "Joni Ernst" },
+  { q: "Hạ-Nghị-Viện có bao nhiêu dân biểu?", a: "bốn trăm ba mươi lăm (435)" }, 
+  { q: "Chúng ta bầu dân biểu cho mấy năm?", a: "hai năm (2)" }, 
+  { q: "Cho biết tên dân biểu của bạn.", a: "Mariannette Miller-Meeks" }, 
+  { q: "Thượng-nghị-sĩ đại diện cho ai?", a: "Tất cả người dân trong tiểu bang" }, 
+  { q: "Tại sao có những tiểu bang có nhiều đại biểu hơn các tiểu bang khác?", a: "(Vì) tiểu bang đó đông dân hơn" }, 
+  { q: "Nhiệm kỳ Tổng Thống là mấy năm?", a: "Bốn (4) năm" }, { q: "Bầu Tổng Thống vào tháng nào?", a: "Tháng Mười Một" }, 
+  { q: "Hiện nay Tổng Thống Hoa Kỳ là ai?", a: "Donald Trump" }, 
+  { q: "Hiện nay Phó Tổng Thống Hoa Kỳ là aiai?", a: "JD Vance" }, 
+  { q: "Nếu Tổng Thống không còn làm việc được nữa, ai sẽ thay thế làm Tổng Thống?", a: "Phó Tổng Thống" }, 
+  { q: "Nếu cả Tổng Thống và Phó Tổng Thống không còn làm việc được nữa, ai sẽ thay thế?", a: "Chủ Tịch Hạ Nghị Viện" }, 
+  { q: "Ai là Tổng Tư Lệnh quân đội?", a: "Tổng Thống" }, { q: "Ai ký dự luật thành luật?", a: "Tổng Thống" }, 
+  { q: "Ai có quyền phủ quyết các dự luật?", a: "Tổng Thống" }, 
+  { q: "Nội các của Tổng Thống làm gì?", a: "Cố vấn cho Tổng Thống" }, 
+  { q: "Kể ra Hai chức vụ trong hàng nội các", a: "Phó Tổng Thống và Bộ Trưởng Giáo Dục" }, 
+  { q: "Ngành tư pháp làm gì?", a: "duyệt lại luật lệ" }, 
+  { q: "Tòa án cao nhất ở Hoa Kỳ là gì?", a: "Tối Cao Pháp Viện" }, 
+  { q: "Có bao nhiêu thẩm phán ở Tối Cao Pháp Viện?", a: "9" }, 
+  { q: "Ai đang là Chủ Tịch Tối Cao Pháp Viện?", a: "John Roberts" }, 
+  { q: "Theo Hiến Pháp, chánh phủ liên bang có một số quyền. Một trong các quyền của chánh phủ liên bang là?", a: "in tiền" },
+  { q: "Theo Hiến Pháp, các tiểu bang có một số quyền. Một trong những quyền này là gì? ", a: "cấp bằng lái xe" }, 
+  { q: "Thống Đốc tiểu bang của bạn tên gì?", a: "Kim Reynolds" }, 
+  { q: "Thủ phủ của tiểu bang bạn tên gì?", a: "Des Moines" }, 
+  { q: "Hai đảng chính của Hoa Kỳ là gì?", a: "Dân Chủ và Cộng Hòa" },
+  { q: "Đảng của Tổng Thống hiện tại là đảng nào?", a: "Đảng Cộng Hòa" }, 
+  { q: "Chủ Tịch Hạ Viện hiện thời tên gì?", a: "Mike Johnson" },
+  { q: "Kể một trong bốn tu chính án nói về quyền cầu cử", a: "Công dân mười tám (18) tuổi và hơn (được đi bầu)." }, 
+  { q: "Một bổn phận chỉ dành riêng cho công dân Hoa Kỳ là gì?", a: " đi bầu trong bầu cử liên bang" }, 
+  { q: "Cho biết một quyền của riêng công dân Hoa Kỳ.", a: "Bỏ phiếu liên bang" },
+  { q: "Cho biết hai quyền của mỗi người sống ở Hoa Kỳ?", a: "tự do ngôn luận và tự do tín ngưỡng" }, 
+  { q: "Khi nói Lời Tuyên Thệ Trung Thành, chúng ta trung thành với cái gì?", a: "Hoa Kỳ" }, 
+  { q: "Khi trở thành công dân Hoa Kỳ, một trong những lời hứa của bạn là gì?", a: "trung thành với quốc gia Hoa Kỳ" }, 
+  { q: "Công dân phải bao nhiêu tuổi mới được bầu Tổng Thống?", a: "Mười Tám (18) và hơn" }, 
+  { q: "Kể hai cách công dân Hoa Kỳ có thể tham dự vào nền dân chủ.", a: "Bỏ phiếu và tranh cử" }, 
+  { q: "Ngày cuối cùng nộp thuế liên bang là ngày nào?", a: "15 Tháng Tư" }, 
+  { q: "Khi nào tất cả nam giới phải ghi tên cho Sở Quân Vụ ?", a: "ở giữa tuổi mười tám (18) và hai mươi sáu (26)" }, 
+  { q: "Một trong những lý do khiến người di dân thời thuộc địa tới Mỹ Châu là gì?", a: "tự do" },
+  { q: "Những ai sống tại Mỹ trước khi người Âu Châu tới?", a: "người da đỏ Mỹ Châu" }, 
+  { q: "Nhóm người nào được mang tới Mỹ Châu và bán làm nô lệ?", a: "người Phi Châu" }, 
+  { q: "Tại sao những người di dân thời thuộc địa chống lại người Anh?", a: "vì thuế má cao quá" }, 
+  { q: "Ai viết Bản Tuyên Ngôn Độc Lập?", a: "(Thomas) Jefferson" }, 
+  { q: "Bản Tuyên Ngôn Độc Lập được chấp nhận lúc nào?", a: "4 Tháng Bẩy 1776" },
+  { q: "Có 13 tiểu bang nguyên thủy. Cho biết ba tiểu bang.", a: "New York,Maryland,New Jersey" },
+  { q: "Việc gì xảy ra tại Đại Hội Lập Hiến ?", a: "Soạn thảo Hiến Pháp" }, 
+  { q: "Hiến Pháp được soạn thảo khi nào?", a: "1787" }, 
+  { q: "Các bài tham luận gọi là Federalist Papers có mục đích hỗ trợ việc thông qua Hiến Pháp Hoa Kỳ. Kể tên một trong những người viết tham luận.", a: " (John) Jay" }, 
+  { q: "Benjamin Franklin nổi tiếng về điều gì?", a: "khởi công xây các thư viện miễn phí đầu tiên của Hoa Kỳ" }, 
+  { q: "Ai là Tổng Thống đầu tiên?", a: " (George) Washington" },
+  { q: "Ai được gọi là cha đẻ của nước Mỹ?", a: " (George) Washington" }, 
+  { q: "Hoa Kỳ mua lãnh thổ nào của Pháp vào năm 1803?", a: "Louisiana" }, 
+  { q: "Nói tên một trong những cuộc chiến Hoa Kỳ tham dự thời 1800.", a: "Nội chiến" },
+  { q: "Tên gọi của cuộc chiến trên đất Hoa Kỳ giữa miền Bắc và miền Nam là gì?", a: "Nội chiến" },
+  { q: "Cho biết một vấn đề đưa tới cuộc nội chiến.", a: "vấn đề nô lệ" },
+  { q: "Một điều quan trọng mà Abraham Lincoln làm là gì?", a: "giải phóng nô lệ" }, 
+  { q: "Tuyên Ngôn Giải Phóng làm gì?", a: "giải phóng nô lệ" },
+  { q: "Bà Susan B. Anthony làm gì?", a: " tranh đấu cho quyền phụ nữ" },
+  { q: "Cho biết một cuộc chiến mà Hoa Kỳ tham dự vào thập niên 1900.", a: "Thế Chiến Thứ Nhất" }, 
+  { q: "Ai là Tổng Thống trong Thế Chiến Thứ Nhất?", a: "(Woodrow) Wilson" }, 
+  { q: "Ai là Tổng Thống trong thời kỳ Khủng Hoảng Kinh Tế và Thế Chiến Thứ Hai?", a: "(Franklin) Roosevelt" }, 
+  { q: "Trong Thế Chiến Thứ Hai, Hoa Kỳ chiến đấu chống các nước nào? ", a: "Nhật Bản, Đức và Ý" }, 
+  { q: "Trước khi trở thành Tổng Thống, Eisenhower là tướng lãnh. Ông ta đánh trận nào?", a: "Thế Chiến Thứ Hai" }, 
+  { q: "Trong thời kỳ Chiến Tranh Lạnh, quan tâm chính của Hoa Kỳ là gì?", a: "Chủ Nghĩa Cộng Sản" }, 
+  { q: "Phong trào nào tìm cách chấm dứt sự phân biệt chủng tộc?", a: " (phong trào) dân quyền" },
+  { q: "Martin Luther King, Jr. đã làm gì?", a: "tranh đấu cho dân quyền" },
+  { q: "Biến cố lớn lao nào xảy ra vào ngày 11 tháng 9 năm 2001 tại Hoa Kỳ?", a: "Bọn khủng bố tấn công Hoa Kỳ" },
+  { q: "Kể tên một bộ lạc da đỏ tại Mỹ", a: "Hopi" }, 
+  { q: "Cho biết một trong hai con sông dài nhất ở Hoa Kỳ.", a: " (Sông) Mississippi" },
+  { q: "Biển nào ở bờ biển phía <span class='highlight'>Tây</span> Hoa Kỳ?", a: "Thái-Bình-Dương" },
+  { q: "Biển nào ở bờ biển phía <span class='highlight'>Đông</span> Hoa Kỳ?", a: "Đại-Tây-Dương" }, 
+  { q: "Cho biết một lãnh thổ hải ngoại của Hoa Kỳ.", a: "Đảo Guam" }, 
+  { q: "Cho biết một trong những tiểu bang ráp ranh Canada.", a: "New York" },
+  { q: "Cho biết một trong những tiểu bang ráp ranh Mexico", a: "California" },
+  { q: "Thủ đô của Hoa Kỳ tên gì?", a: "Washington, D.C." }, 
+  { q: "Tượng Nữ Thần Tự Do ở đâu?", a: "Cảng New York" },
+  { q: "Tại sao lá cờ Hoa Kỳ có 13 lằn gạch?", a: "bởi vì đã có 13 thuộc địa nguyên thủy" }, 
+  { q: "Tại sao lá cờ Hoa Kỳ có 50 ngôi sao?", a: "bởi vì có 50 tiểu bang" },
+  { q: "Tựa của bài quốc ca Hoa Kỳ là gì?", a: "The Star-Spangled Banner" }, 
+  { q: "Ngày nào là ngày Lễ Độc Lập?", a: "4 Tháng Bẩy" }, 
+  { q: "Cho biết hai ngày lễ quốc gia của Hoa Kỳ.", a: " Tết Tây và Giáng Sinh " }, 
+  // You can continue adding all 100 Q&A pairs here
+];
+
+let index = 0;
+
+function showCard(i) {
+  document.getElementById("question").innerHTML = cards[i].q;
+  document.getElementById("answer").innerHTML = cards[i].a;
+  document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.querySelector('.card').classList.remove('flip');
+
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  prevBtn.style.display = i === 0 ? "none" : "inline-block";
+  nextBtn.style.display = i === cards.length - 1 ? "none" : "inline-block";
+}
+
+function nextCard() {
+  if (index < cards.length - 1) { index++; showCard(index); }
+}
+
+function prevCard() {
+  if (index > 0) { index--; showCard(index); }
+}
+
+function gotoCard() {
+  const num = parseInt(document.getElementById("gotoInput").value, 10);
+  if (!isNaN(num) && num >= 1 && num <= cards.length) {
+    index = num - 1;
+    showCard(index);
+  } else {
+    alert("Vui lòng nhập số câu từ 1 đến " + cards.length);
+  }
+}
+
+showCard(index);
+</script>
+</body>
+</html>
