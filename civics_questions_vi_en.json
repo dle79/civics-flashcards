@@ -23,8 +23,16 @@
   { "q": "Bản Tuyên Ngôn Độc Lập làm gì?", 
     "a": "cho biết Hoa Kỳ đã tự do (khỏi Anh Quốc)" 
   },
-	{ "q": "Kể ra Hai quyền trong Bản Tuyên Ngôn Độc Lập?", "a": "quyền sống và quyền tự do" }, 
-  { "q": "Tự do tôn giáo là gì?", "a": "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào" },
-  { "q": "Hệ thống kinh tế của Hoa Kỳ là gì?", "a": "kinh tế tư bản" }, 
-  { "q": "“Thượng tôn luật pháp” là gì?", "a": "Mọi người đều phải tuân theo luật pháp" },
+	{ "q": "Kể ra Hai quyền trong Bản Tuyên Ngôn Độc Lập?",
+		"a": "quyền sống và quyền tự do" 
+	}, 
+  { "q": "Tự do tôn giáo là gì?", 
+	  "a": "Bạn có thể theo bất cứ tôn giáo nào, hoặc không theo tôn giáo nào"
+  },
+  { "q": "Hệ thống kinh tế của Hoa Kỳ là gì?", 
+	  "a": "kinh tế tư bản" 
+  }, 
+  { "q": "“Thượng tôn luật pháp” là gì?", 
+	  "a": "Mọi người đều phải tuân theo luật pháp" 
+  },
 ]
