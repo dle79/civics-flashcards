@@ -1,5 +1,7 @@
 [ 
-  { "q": "Tu chính án là gì?", 
-    "a": "một sự thay đổi (trong Hiến Pháp)" }
+  {
+    "q": "<span class=\"highlight\">LUẬT CAO NHẤT</span> của quốc gia là gì?",
+    "a": "Hiến Pháp"
+  }
   
 ]
