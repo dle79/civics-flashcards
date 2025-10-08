@@ -329,7 +329,7 @@ function showCard(i) {
   document.getElementById("question").innerHTML = cards[i].q;
   document.getElementById("answer").innerHTML = cards[i].a;
   document.getElementById("qnum-front").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
-  document.getElementById("qnum-back").innerText = "Câu hỏi " + (i + 1) + " / " + cards.length;
+  document.getElementById("qnum-back").innerText = "Câu trả lời " + (i + 1) + " / " + cards.length;
   document.querySelector('.card').classList.remove('flip');
 
   const prevBtn = document.getElementById("prevBtn");
