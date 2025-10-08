@@ -45,7 +45,7 @@
   { "q": "Ai là một trong những Thượng Nghị Sĩ Liên Bang của bạn?", "a": "Joni Ernst", "img": "https://www.iri.org/wp-content/uploads/2018/08/Joni-Ernst-headshot.jpg" },
   { "q": "Hạ-Nghị-Viện có bao nhiêu dân biểu?", "a": "bốn trăm ba mươi lăm (435)" }, 
   { "q": "Chúng ta bầu dân biểu cho mấy năm?", "a": "hai năm (2)" }, 
-  { "q": "Cho biết tên dân biểu của bạn.", "a": "Mariannette Miller-Meeks" }, 
+  { "q": "Cho biết tên dân biểu của bạn.", "a": "Mariannette Miller-Meeks", "img":"https://yaf.org/wp-content/uploads/2024/05/mariannette-miller-meeks.jpeg" }, 
   { "q": "Thượng-nghị-sĩ đại diện cho ai?", "a": "Tất cả người dân trong tiểu bang" }, 
   { "q": "Tại sao có những tiểu bang có nhiều đại biểu hơn các tiểu bang khác?", "a": "(Vì) tiểu bang đó đông dân hơn" }, 
   { "q": "Nhiệm kỳ Tổng Thống là mấy năm?", "a": "Bốn (4) năm" }, { "q": "Bầu Tổng Thống vào tháng nào?", "a": "Tháng Mười Một" }, 
