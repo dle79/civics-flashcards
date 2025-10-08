@@ -240,19 +240,31 @@ function showCard(i) {
   const aElem = document.getElementById("answer");
   const card = cards[i];
 
+  if (!card) return;
+
+  // 🟢 Show question
   qElem.innerHTML = card.q;
-if (card.img) {
-  aElem.innerHTML = `${card.a}<br>
-    <img src="${card.img}" alt="Image for ${card.a}"
-         style="margin-top:2vh; max-width:75%; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">`;
-} else {
-  aElem.innerHTML = card.a;
-}
 
+  // 🟢 Show answer: if image exists, show image left + text right
+  if (card.img) {
+    aElem.innerHTML = `
+      <div style="display:flex; align-items:center; justify-content:center; gap:3vw; width:100%; height:100%;">
+        <img src="${card.img}" 
+             alt="Image for ${card.a}"
+             style="max-width:40%; max-height:80%; object-fit:contain; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.3);">
+        <div style="flex:1; font-size:inherit; font-weight:inherit; text-align:left;">${card.a}</div>
+      </div>
+    `;
+  } else {
+    // 🟢 No image — just text
+    aElem.innerHTML = `<div style="padding:2vh;">${card.a}</div>`;
+  }
 
-  document.getElementById("qnum-front").innerText = `Câu hỏi ${i+1} / ${cards.length}`;
-  document.getElementById("qnum-back").innerText  = `Câu trả lời ${i+1} / ${cards.length}`;
+  // 🟢 Question number update
+  document.getElementById("qnum-front").innerText = `Câu hỏi ${i + 1} / ${cards.length}`;
+  document.getElementById("qnum-back").innerText = `Câu trả lời ${i + 1} / ${cards.length}`;
 
+  // 🟢 Reset flip & buttons
   document.querySelector(".card").classList.remove("flip");
   document.getElementById("prevBtn").style.display = i === 0 ? "none" : "inline-block";
   document.getElementById("nextBtn").style.display = i === cards.length - 1 ? "none" : "inline-block";
