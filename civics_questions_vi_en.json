@@ -1,4 +1,3 @@
-
 [ 
   { q: "<span class='highlight'>LUẬT CAO NHẤT</span> của quốc gia là gì?", a: "Hiến Pháp" },    
   { q: "<span class='highlight'>Hiến Pháp</span> làm gì?", a: "Thiết lập chánh phủ" }, 
@@ -99,4 +98,4 @@
   { q: "Ngày nào là ngày Lễ Độc Lập?", a: "4 Tháng Bẩy" }, 
   { q: "Cho biết hai ngày lễ quốc gia của Hoa Kỳ.", a: " Tết Tây và Giáng Sinh " }, 
   // You can continue adding all 100 Q&A pairs here
-];
+]
